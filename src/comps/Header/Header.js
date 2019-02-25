@@ -12,7 +12,7 @@ const Header = () => {
 				<Link className="item link" to='/heroes'> Heroes </Link>
 				<Link className="item link" to='/villains'> Villains </Link>
 				<Link className="item link" to='/teams'> Teams </Link>
-				<Link className="item link" to='/comics'> Comics </Link>
+				<Link className="item link" to='/stories'> Stories </Link>
 			</div>
 		</div>
 		) ; 

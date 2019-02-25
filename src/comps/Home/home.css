@@ -9,10 +9,11 @@
 }
 
 h1
-{
-	font-size : 2.5rem !important;
+{	font-size : 2.5rem !important;
 	background-color: #E70013 ;
 	color: #FFD3D7;
+	border-top-right-radius: 0.8rem ;
+	border-top-left-radius: 0.8rem ;
 }
 
 h2

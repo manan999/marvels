@@ -1,0 +1,18 @@
+.searchbox
+{
+	text-align: center ;
+	padding: 1rem ;
+	border : 1px solid #19a974;
+	background-color:  #cdecff ; 
+}
+
+button
+{
+	width : 150px ;
+	height: 50px ;
+}
+
+.padded
+{
+	padding: 0.5rem ;
+}
