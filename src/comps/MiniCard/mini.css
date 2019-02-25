@@ -1,0 +1,19 @@
+.mini
+{
+	border : 2px solid #E70013;
+	margin: 1.5em 0 ;
+	border-radius: 1rem ;
+}
+
+.mini .image
+{
+	border-radius: 1rem ; 
+}
+
+.mini h2
+{
+	background-color: #E70013 ;
+	color : white;
+	border-top-right-radius: 0.8rem ;
+	border-top-left-radius: 0.8rem ;
+}

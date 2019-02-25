@@ -1,0 +1,7 @@
+.image
+{
+	background-image: url('./img/marvelbg.jpg') ;
+	height: 23em ;
+	width: auto ;
+	background-size: cover;
+}
