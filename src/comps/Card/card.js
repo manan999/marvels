@@ -1,6 +1,6 @@
 import React from 'react' ;
 import './card.css' ;
-import 'tachyons' ;
+//import 'tachyons' ;
 
 const Card = (props) => {
 	return (
@@ -8,10 +8,11 @@ const Card = (props) => {
 			<img src = {props.link} alt = 'Cap_Ame' />
 			<div>
 				<h2> {props.name} </h2>
-				<p> {props.rn} </p>
 			</div>
 		</div>
 	) ;
 }
 
 export default Card ;
+
+// <p> {props.rn} </p> After line 10

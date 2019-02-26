@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // import './Villaincard.css' ;
+import CardList from '../Card/cardlist.js' ;
 
 class VillainCard extends Component {
 	render() {
@@ -9,8 +10,7 @@ class VillainCard extends Component {
 				<div>
 					<h3> The Dreadful, the deadly and the fearsome of Marvel Universe ...
 					</h3>
-					<div className="image" >
-					</div> 
+					<CardList arr={this.props.vill} />
 				</div> 
 			</div>
 		);

@@ -17,3 +17,21 @@
 	border-top-right-radius: 0.8rem ;
 	border-top-left-radius: 0.8rem ;
 }
+.next a
+{
+	text-align: right;
+	display: inline-block; 
+	text-decoration: none;
+	color : gainsboro !important;
+	background-color: royalblue ;
+	padding : 1vh ;
+	margin : 1vh 0;
+	font-size : 1.5rem ;
+	border-radius: 0.4rem ;
+	transition: all 0.5s ;
+}
+
+.next a:hover
+{	transform: scale(1.1) ;
+	
+}

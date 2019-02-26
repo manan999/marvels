@@ -14,10 +14,10 @@ class App extends Component {
           <div>
             <Header />
             <Route path='/' exact component={Home} />
-            <Route path='/heroes' component={StreamList}/>
-            <Route path='/villains'component={StreamList}/>
-            <Route path='/teams' component={StreamList}/>
-            <Route path='/comics' component={StreamList}/>
+            <Route path='/hero' component={StreamList}/>
+            <Route path='/villain'component={StreamList}/>
+            <Route path='/team' component={StreamList}/>
+            <Route path='/story' component={StreamList}/>
           </div>
         </BrowserRouter>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // import './Teamcard.css' ;
+import CardList from '../Card/cardlist.js' ;
 
 class TeamCard extends Component {
 	render() {
@@ -9,8 +10,7 @@ class TeamCard extends Component {
 				<div>
 					<h3> When the threats are too mighty to tackle alone, you ASSEMBLE...
 					</h3>
-					<div className="image" >
-					</div> 
+					<CardList arr={this.props.team} />  
 				</div> 
 			</div>
 		);

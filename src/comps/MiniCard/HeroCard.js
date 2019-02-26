@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // import './herocard.css' ;
+import CardList from '../Card/cardlist.js' ;
 
 class HeroCard extends Component {
 	render() {
@@ -9,8 +10,7 @@ class HeroCard extends Component {
 				<div>
 					<h3> A List of the Earth's Mightiest Heroes and Beyond too...
 					</h3>
-					<div className="image" >
-					</div> 
+					<CardList arr={this.props.hero} /> 
 				</div> 
 			</div>
 		);
@@ -18,3 +18,4 @@ class HeroCard extends Component {
 }
 
 export default HeroCard ;
+

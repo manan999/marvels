@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Gaegu');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 .cards
-{	background-color: #9eebcf ;
+{	background-color: #E70013 ;
 	display: inline-block;
 	border-radius: 0.5rem ;
-	padding : 1rem ;
+	padding : 0.6rem ;
 	margin : 0.5rem ;
 	border-width: 0.25rem;
 	box-shadow : 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ); 
@@ -13,8 +13,8 @@
 }
 
 .cards *
-{	font-weight: bold;
-	font-family: 'Gaegu', cursive;
+{	/*font-weight: bold;*/
+	font-family: 'Ubuntu', cursive;
 }
 
 .cards h2
@@ -47,13 +47,13 @@
   }
   .cards img 
   {
-  	 height : 100px ;
-	 width : 100px ;	 
+  	 height : 75px ;
+	 width : 75px ;	 
   }
 
   .cards h2
   {
-	font-size: 0.9em;
+	font-size: 0.7em;
   }
 
   .cards p
