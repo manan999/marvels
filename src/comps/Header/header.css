@@ -21,6 +21,10 @@
 {	overflow: hidden;
   	background-color: #E70013;
   	border-bottom: 2px solid red ;
+  	position: fixed; 
+  	width: 100% ;
+  	top: 0 ;
+  	z-index: 4 ;
 }
 
 .link

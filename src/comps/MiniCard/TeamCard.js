@@ -10,7 +10,7 @@ class TeamCard extends Component {
 				<div>
 					<h3> When the threats are too mighty to tackle alone, you ASSEMBLE...
 					</h3>
-					<CardList arr={this.props.team} />  
+					<CardList arr={this.props.team} big="no"/>  
 				</div> 
 			</div>
 		);

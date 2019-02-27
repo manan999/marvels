@@ -2,8 +2,10 @@
 {
 	text-align: center ;
 	padding: 1rem ;
-	border : 1px solid #19a974;
-	background-color:  #cdecff ; 
+	border : 1px solid #E70012 ;
+	color : red ;
+	background-color:  #FFE5E7 ;
+	font-size : 1.2rem ; 
 }
 
 button
@@ -15,4 +17,11 @@ button
 .padded
 {
 	padding: 0.5rem ;
+}
+
+input[type='search']:focus
+{
+	border-color: #E70012 ;
+	box-shadow: 0 0 5px rgba(231, 0, 18, 1);
+	outline-color: #E70013 ;
 }

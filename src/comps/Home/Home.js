@@ -8,7 +8,7 @@ class Home extends Component {
 		return (
 			<div>
 				<div className="panel">
-					<h1> Home </h1>
+					<h1 className="home"> Home </h1>
 					<h2> Marvel + Us = Marvellous </h2>
 					<hr color="red" />
 					<MiniCardList />

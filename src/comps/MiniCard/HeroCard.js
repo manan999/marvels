@@ -10,7 +10,7 @@ class HeroCard extends Component {
 				<div>
 					<h3> A List of the Earth's Mightiest Heroes and Beyond too...
 					</h3>
-					<CardList arr={this.props.hero} /> 
+					<CardList arr={this.props.hero} big="no"/> 
 				</div> 
 			</div>
 		);

@@ -5,6 +5,7 @@ import './App.css' ;
 import StreamList from './comps/StreamList.js' ;
 import Header from './comps/Header/Header.js' ;
 import Home from './comps/Home/Home.js' ;
+import ConSearch from './comps/ConSearch/ConSearch.js' ;
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path='/villain'component={StreamList}/>
             <Route path='/team' component={StreamList}/>
             <Route path='/story' component={StreamList}/>
+            <Route path='/consea' component={ConSearch} />
           </div>
         </BrowserRouter>
       </div>

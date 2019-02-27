@@ -1,14 +1,15 @@
 .panel
 {
-	margin : 8.5vh 11.5vw 4vh ;
+	margin : 15vh 11.5vw 4vh ;
 	background-color: #FFD3D7 ;
 	box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.4) ;
 	padding: 2em 3em ;
 	text-align : center; 
 	border-radius: 2rem ;
+	min-height : 525px ;
 }
 
-h1
+.home
 {	font-size : 2.5rem !important;
 	background-color: #E70013 ;
 	color: #FFD3D7;

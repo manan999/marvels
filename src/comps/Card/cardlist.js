@@ -6,7 +6,8 @@ const Cardlist = (props) => {
 	return (
 		<div>
 			{   props.arr.map( (user, i) => {
-					return (<Card key={i} id={user.id} name={user.name} rn={user.realname} link={user.link}/>) ;
+					return (<Card key={i} id={user.id} name={user.name} 
+								  rn={user.realname} link={user.link} big={props.big}/>) ;
 					} )	}
 		</div>	
 		) ;
