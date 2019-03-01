@@ -34,17 +34,26 @@ class ConSearch extends Component {
 		// console.log(event.target.value) ;
 	}
 
+	big = () => {
+		if (this.props.title === 'HEROES' || this.props.title === 'VILLAINS' )
+			return 'yes' ;
+		else
+			return 'med' ; 
+	}
+
 	render() {
 		// console.log(this.state.cards) ;
 		const arr = this.state.cards.filter(card => {
 			return card.name.toLowerCase().includes(this.state.searchText.toLowerCase()) ;
 		}) ;
 
+		let str = this.big() ;
+		
 		return (
 			<div className="panel">
 				<Logo title={this.props.title} />
 				<Searchbar searchChange={this.onSC} />
-				<CardList arr={arr} big="yes" /> 
+				<CardList arr={arr} big={str} /> 
 			</div>
 		);
 	}

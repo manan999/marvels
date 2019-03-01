@@ -1,2 +1,3 @@
 1. Add onclick to show specific page
-2. Set CSS for specific page and add End-point to smartbrain-api
+2. Set CSS for specific page 
+3. Set css for .med in card.css
