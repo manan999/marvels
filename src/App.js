@@ -9,9 +9,7 @@ import VillainList from './comps/VillainList.js' ;
 import TeamList from './comps/TeamList.js' ;
 import StoryList from './comps/StoryList.js' ;
 
-
 //import ConSearch from './comps/ConSearch/ConSearch.js' ;
-//import StreamList from './comps/StreamList.js' ;
 
 class App extends Component {
   render() {
@@ -21,10 +19,14 @@ class App extends Component {
           <div>
             <Header />
             <Route path='/' exact component={Home} />
-            <Route path='/hero' component={HeroList}/>
-            <Route path='/villain'component={VillainList}/>
-            <Route path='/team' component={TeamList}/>
-            <Route path='/story' component={StoryList}/>
+            <Route path='/hero' exact component={HeroList}/>
+            <Route path='/villain' exact component={VillainList}/>
+            <Route path='/team' exact component={TeamList}/>
+            <Route path='/story' exact component={StoryList}/>
+            <Route path='/hero/' component={Home}/>
+            <Route path='/villain/' component={Home}/>
+            <Route path='/team/' component={Home}/>
+            <Route path='/story/' component={Home}/>
           </div>
         </BrowserRouter>
       </div>

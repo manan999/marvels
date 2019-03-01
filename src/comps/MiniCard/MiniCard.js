@@ -6,7 +6,7 @@ import './mini.css' ;
 class MiniCard extends Component {
 	select()
 	{	if(this.props.path !== '/gallery')
-		{	console.log('im here')
+		{	//console.log('im here')
 			return (
 				<div className="next" >
 					<Link to={this.props.path}> More </Link> 

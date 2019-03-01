@@ -5,6 +5,7 @@ import MiniCardList from '../MiniCard/MiniCardList.js' ;
 
 class Home extends Component {
 	render() {
+		console.log(window.location.pathname) ;
 		return (
 			<div>
 				<div className="panel">

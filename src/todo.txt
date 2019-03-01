@@ -1,2 +1,2 @@
 1. Add onclick to show specific page
-2. Change route ka path ki app.js so that it doesnt conflict
+2. Set CSS for specific page and add End-point to smartbrain-api

@@ -44,7 +44,7 @@ class MiniCardList extends Component {
 	}
 
 	render() {
-		console.log(this.state) ;
+		//console.log(this.state) ;
 		return (
 			<div>
 				<MiniCard head="WELCOME!" path='/gallery'>
