@@ -12,6 +12,12 @@
 	/*transition: all 0.5s ;*/
 }
 
+.yes
+{
+	padding : 0.8rem ;
+	color: white ;
+}
+
 .cards *
 {	/*font-weight: bold;*/
 	font-family: 'Ubuntu', cursive;
@@ -45,6 +51,12 @@
 	border-width: 0.125rem;
 	box-shadow : 2px 2px 4px 0px rgba( 0, 0, 0, 0.2 ); 
   }
+
+  .yes
+  {	padding: 0.5rem ;
+  	margin : 0.15rem ;	
+  }
+
   .cards img 
   {
   	 height : 75px ;

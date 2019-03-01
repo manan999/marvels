@@ -15,14 +15,21 @@ class Card extends React.Component
 		if( this.state.big === 'yes')
 			return <p> {this.props.rn} </p> ;
 	}
+
+	checkNum = () =>{
+		if( isNaN(this.props.name.charAt(this.props.name.length-1)) === false)
+			return this.props.name.slice(0, this.props.name.length-2) ;
+		else
+			return this.props.name ;
+	}
 	
 	render()
-	{	//console.log(this.state) ;
+	{	const str = 'cards ' + this.state.big ;
 		return (
-			<div className="cards" >
+			<div className={str} >
 				<img src = {this.props.link} alt = 'Cap_Ame' />
 				<div>
-					<h2> {this.props.name} </h2>
+					<h2> {this.checkNum()} </h2>
 					{ this.checkBig() }
 				</div>
 			</div>

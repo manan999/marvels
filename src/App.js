@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom' ;
 
 import './App.css' ;
-import StreamList from './comps/StreamList.js' ;
 import Header from './comps/Header/Header.js' ;
 import Home from './comps/Home/Home.js' ;
-import ConSearch from './comps/ConSearch/ConSearch.js' ;
+import HeroList from './comps/HeroList.js' ;
+import VillainList from './comps/VillainList.js' ;
+import TeamList from './comps/TeamList.js' ;
+import StoryList from './comps/StoryList.js' ;
+
+
+//import ConSearch from './comps/ConSearch/ConSearch.js' ;
+//import StreamList from './comps/StreamList.js' ;
 
 class App extends Component {
   render() {
@@ -15,11 +21,10 @@ class App extends Component {
           <div>
             <Header />
             <Route path='/' exact component={Home} />
-            <Route path='/hero' component={StreamList}/>
-            <Route path='/villain'component={StreamList}/>
-            <Route path='/team' component={StreamList}/>
-            <Route path='/story' component={StreamList}/>
-            <Route path='/consea' component={ConSearch} />
+            <Route path='/hero' component={HeroList}/>
+            <Route path='/villain'component={VillainList}/>
+            <Route path='/team' component={TeamList}/>
+            <Route path='/story' component={StoryList}/>
           </div>
         </BrowserRouter>
       </div>
@@ -28,3 +33,5 @@ class App extends Component {
 }
 
 export default App;
+
+// <Route path='/consearch' component={ConSearch} />

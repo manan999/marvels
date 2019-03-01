@@ -4,8 +4,6 @@ import Searchbar from '../Search/Search.js' ;
 import Logo from '../Logo/Logo.js' ;
 import CardList from '../Card/cardlist.js' ;
 
-// FEED TITLE AND URL AS PROPS
-
 class ConSearch extends Component {
 	constructor()
 	{
@@ -17,7 +15,7 @@ class ConSearch extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://magic-brain-api.herokuapp.com/avenger')
+		fetch(this.props.url)
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -44,7 +42,7 @@ class ConSearch extends Component {
 
 		return (
 			<div className="panel">
-				<Logo title="Heroes" />
+				<Logo title={this.props.title} />
 				<Searchbar searchChange={this.onSC} />
 				<CardList arr={arr} big="yes" /> 
 			</div>

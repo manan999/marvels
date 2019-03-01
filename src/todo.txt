@@ -1,4 +1,2 @@
-1. Specific css for big cards, add padding individually and margin colectively
-2. Make sepearte components for hero, vilain, etc...
-3. Add onclick to show specific page
-4. Change route ka path ki app.js so that it doesnt conflict
+1. Add onclick to show specific page
+2. Change route ka path ki app.js so that it doesnt conflict
