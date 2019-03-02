@@ -23,10 +23,10 @@ class App extends Component {
             <Route path='/villain' exact component={VillainList}/>
             <Route path='/team' exact component={TeamList}/>
             <Route path='/story' exact component={StoryList}/>
-            <Route path='/hero/' component={Home}/>
-            <Route path='/villain/' component={Home}/>
-            <Route path='/team/' component={Home}/>
-            <Route path='/story/' component={Home}/>
+            <Route path='/hero/:name' component={Home}/>
+            <Route path='/villain/:name' component={Home}/>
+            <Route path='/team/:name' component={Home}/>
+            <Route path='/story/:name' component={Home}/>
           </div>
         </BrowserRouter>
       </div>

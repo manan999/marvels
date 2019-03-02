@@ -1,3 +1,2 @@
 1. Add onclick to show specific page
 2. Set CSS for specific page 
-3. Set css for .med in card.css

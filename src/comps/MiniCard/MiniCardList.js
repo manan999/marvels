@@ -17,7 +17,7 @@ class MiniCardList extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://magic-brain-api.herokuapp.com/avenger')
+		fetch('http://magic-brain-api.herokuapp.com/hero')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -29,7 +29,7 @@ class MiniCardList extends Component {
 	            this.setState({hero: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
-	    fetch('http://magic-brain-api.herokuapp.com')
+	    fetch('http://magic-brain-api.herokuapp.com/vill')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -51,16 +51,16 @@ class MiniCardList extends Component {
 					<ImageSlide />
 				</MiniCard>
 				<MiniCard head="HEROES!" path='/hero'>
-					<HeroCard hero={this.state.hero.slice(1, 5)}/>
+					<HeroCard hero={this.state.hero.slice(0, 4)}/>
 				</MiniCard>
 				<MiniCard head="VILLAINS!" path='/villain'>
-					<VillainCard vill={this.state.hero.slice(5, 9)}/>
+					<VillainCard vill={this.state.villain.slice(0, 4)}/>
 				</MiniCard>
 				<MiniCard head="STORIES!" path='/story'>
 					<StoryCard story={this.state.hero.slice(9, 13)}/>
 				</MiniCard>
 				<MiniCard head="TEAMS!" path='/team'>
-					<TeamCard team={this.state.hero.slice(13, 17)} />
+					<TeamCard team={this.state.villain.slice(5, 9)} />
 				</MiniCard>
 			</div>
 		);

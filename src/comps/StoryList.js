@@ -6,7 +6,7 @@ class StoryList extends Component {
 	render() {
 		return (
 			<div>
-				<ConSearch title="STORIES" url="http://magic-brain-api.herokuapp.com/avenger" />
+				<ConSearch title="STORIES" url="http://magic-brain-api.herokuapp.com/vill" />
 			</div>
 		);
 	}
