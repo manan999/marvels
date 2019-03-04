@@ -8,8 +8,8 @@ import HeroList from './comps/HeroList.js' ;
 import VillainList from './comps/VillainList.js' ;
 import TeamList from './comps/TeamList.js' ;
 import StoryList from './comps/StoryList.js' ;
-
-//import ConSearch from './comps/ConSearch/ConSearch.js' ;
+import Detail from './comps/Detail.js' ;
+import BigDetail from './comps/BigDetail.js' ;
 
 class App extends Component {
   render() {
@@ -23,10 +23,10 @@ class App extends Component {
             <Route path='/villain' exact component={VillainList}/>
             <Route path='/team' exact component={TeamList}/>
             <Route path='/story' exact component={StoryList}/>
-            <Route path='/hero/:name' component={Home}/>
-            <Route path='/villain/:name' component={Home}/>
-            <Route path='/team/:name' component={Home}/>
-            <Route path='/story/:name' component={Home}/>
+            <Route path='/hero/:name' component={Detail}/>
+            <Route path='/villain/:name' component={Detail}/>
+            <Route path='/team/:name' component={BigDetail}/>
+            <Route path='/story/:name' component={BigDetail}/>
           </div>
         </BrowserRouter>
       </div>

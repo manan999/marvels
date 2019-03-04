@@ -37,8 +37,11 @@
 	width : 200px ;
 }
 
-.med img
-{
+.med, .med2
+{	color: white; 	}
+
+.med img, .med2 img
+{	height : 268px;
 	width : 400px;
 }
 
@@ -68,8 +71,8 @@
 	 width : 75px ;	 
   }
 
-  .med img
-  {
+  .med img, .med2 img
+  {	height: 100px;
   	width : 150px;
   }
 

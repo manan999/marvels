@@ -13,6 +13,8 @@ class MiniCardList extends Component {
 		this.state = {
 			hero : [] ,
 			villain : [] ,
+			story : [] ,
+			team : [] ,
 		}
 	}
 
@@ -41,6 +43,30 @@ class MiniCardList extends Component {
 	            this.setState({villain: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
+	    fetch('http://magic-brain-api.herokuapp.com/team')
+		.then( res => {
+			    if ( res.ok )
+	              return res.json() ;
+	            else 
+	              throw Error(res.statusText)
+	          } )
+	    .then( resp => {
+	            // console.log(resp) ;
+	            this.setState({team: resp});
+	                	} )
+	    .catch( err => console.log(err) ) ;
+	    fetch('http://magic-brain-api.herokuapp.com/story')
+		.then( res => {
+			    if ( res.ok )
+	              return res.json() ;
+	            else 
+	              throw Error(res.statusText)
+	          } )
+	    .then( resp => {
+	            // console.log(resp) ;
+	            this.setState({story: resp});
+	                	} )
+	    .catch( err => console.log(err) ) ;
 	}
 
 	render() {
@@ -57,10 +83,10 @@ class MiniCardList extends Component {
 					<VillainCard vill={this.state.villain.slice(0, 4)}/>
 				</MiniCard>
 				<MiniCard head="STORIES!" path='/story'>
-					<StoryCard story={this.state.hero.slice(9, 13)}/>
+					<StoryCard story={this.state.story.slice(0, 4)}/>
 				</MiniCard>
 				<MiniCard head="TEAMS!" path='/team'>
-					<TeamCard team={this.state.villain.slice(5, 9)} />
+					<TeamCard team={this.state.team.slice(0, 4)} />
 				</MiniCard>
 			</div>
 		);

@@ -1,4 +1,6 @@
 import React from 'react' ;
+import { withRouter } from 'react-router-dom' ;
+
 import './card.css' ;
 //import 'tachyons' ;
 
@@ -22,11 +24,17 @@ class Card extends React.Component
 		else
 			return this.props.name ;
 	}
+
+	onCardClick = () => {
+		let str = window.location.pathname + '/' + this.props.name ;
+		if(this.state.big !== "no" && this.state.big !== "med2" )
+			this.props.history.push(str) ;
+	}
 	
 	render()
 	{	const str = 'cards ' + this.state.big ;
 		return (
-			<div className={str} >
+			<div className={str} onClick={this.onCardClick}>
 				<img src = {this.props.link} alt = 'Cap_Ame' />
 				<div>
 					<h2> {this.checkNum()} </h2>
@@ -37,4 +45,4 @@ class Card extends React.Component
 	}
 }
 
-export default Card ;
+export default withRouter(Card)  ;

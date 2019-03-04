@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Detail extends Component {
+class BigDetail extends Component {
 	constructor()
 	{
 		super()
@@ -25,11 +25,11 @@ class Detail extends Component {
 		return (
 			<div>
 				<div className="panel">
-					This is the page for {this.state.type + ' ' + this.state.name}
+					This is Detail Page for {this.state.type + ' ' + this.state.name}
 				</div>
 			</div>
 		);
 	}
 }
 
-export default Detail ; 
+export default BigDetail ; 
