@@ -19,7 +19,7 @@ class MiniCardList extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://magic-brain-api.herokuapp.com/hero')
+		fetch('http://magic-brain-api.herokuapp.com/hero?limit=5')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -31,7 +31,7 @@ class MiniCardList extends Component {
 	            this.setState({hero: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
-	    fetch('http://magic-brain-api.herokuapp.com/vill')
+	    fetch('http://magic-brain-api.herokuapp.com/vill?limit=5')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -43,7 +43,7 @@ class MiniCardList extends Component {
 	            this.setState({villain: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
-	    fetch('http://magic-brain-api.herokuapp.com/team')
+	    fetch('http://magic-brain-api.herokuapp.com/team?limit=5')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -55,7 +55,7 @@ class MiniCardList extends Component {
 	            this.setState({team: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
-	    fetch('http://magic-brain-api.herokuapp.com/story')
+	    fetch('http://magic-brain-api.herokuapp.com/story?limit=5')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;

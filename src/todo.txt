@@ -1,2 +1,5 @@
-1. Add onclick to show specific page
-2. Set CSS for specific page 
+1. Set CSS for specific page 
+2. Add Slide show component after 'npm install react-slideshow-image -S'
+
+1. Create table team (Whoop)
+2. Create table Story (Yay!)
