@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CircleLoader from 'react-spinners/CircleLoader' ;
 
+import './details.css' ;
+
 class Detail extends Component {
 	constructor()
 	{
@@ -53,13 +55,18 @@ class Detail extends Component {
 	}
 
 	render() {
-		//console.log(this.state) ;
-		if( this.state.data !== {} )
+		console.log(this.state) ;
+		if( this.state.data )
 		{
 			return (
 				<div>
 					<div className="panel">
-						This is the page for {this.state.type + ' ' + this.state.name}
+						<div className="content" >
+							{this.state.data.name + ' ' + this.state.data.realname}
+						</div>
+						<div className="img-long">
+							<img src={this.state.data.biglink} alt={this.state.data.name}/>
+						</div>
 					</div>
 				</div>
 			);
@@ -67,7 +74,10 @@ class Detail extends Component {
 		else
 			return (
 				<div>
-					<CircleLoader sizeUnit={"px"} size={150} color={'#e70013'} loading={true} /> 
+					<div className="panel">
+						<CircleLoader sizeUnit={"px"} size={150} color={'#e70013'} loading={true} />
+						Loading ...
+					</div>  
 				</div>
 			) ;
 	}

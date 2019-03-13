@@ -10,7 +10,7 @@ class StoryCard extends Component {
 				<div>
 					<h3> From Infinity to Annihilation, Some of the greatest of the Marvel Lore...
 					</h3>
-					<CardList arr={this.props.story} big="med2"/> 
+					<CardList arr={this.props.story} big="med" path='team/'/> 
 				</div> 
 			</div>
 		);

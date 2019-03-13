@@ -53,7 +53,7 @@ class ConSearch extends Component {
 			<div className="panel">
 				<Logo title={this.props.title} />
 				<Searchbar searchChange={this.onSC} />
-				<CardList arr={arr} big={str} /> 
+				<CardList arr={arr} big={str}/> 
 			</div>
 		);
 	}

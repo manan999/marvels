@@ -10,7 +10,7 @@ class VillainCard extends Component {
 				<div>
 					<h3> The Dreadful, the deadly and the fearsome of Marvel Universe ...
 					</h3>
-					<CardList arr={this.props.vill} big="no"/>
+					<CardList arr={this.props.vill} big="no" path="villain/"/>
 				</div> 
 			</div>
 		);

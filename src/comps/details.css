@@ -1,0 +1,12 @@
+.img-long img
+{	border-radius: 2rem ;
+	width: 450px;
+	height: 675px ;
+	border : 10px solid #E70013 ;
+}
+
+.content, .img-long
+{
+	display: inline-block;
+	width : 474px ; 
+}

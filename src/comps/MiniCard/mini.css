@@ -28,7 +28,7 @@
 	margin : 1vh 0;
 	font-size : 1.5rem ;
 	border-radius: 0.4rem ;
-	transition: all 0.5s ;
+	transition: all 0.1s ;
 }
 
 .next a:hover

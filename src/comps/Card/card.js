@@ -26,9 +26,17 @@ class Card extends React.Component
 	}
 
 	onCardClick = () => {
-		let str = window.location.pathname + '/' + this.props.name ;
-		if(this.state.big !== "no" && this.state.big !== "med2" )
+		let str ;
+		if(this.props.path)
+		{	str = window.location.pathname + this.props.path + this.props.name ;
 			this.props.history.push(str) ;
+			// console.log(str) ;
+		}
+		else
+		{	//console.log(this.props) ;
+			str = window.location.pathname + '/' + this.props.name ;
+			this.props.history.push(str) ;
+		}
 	}
 	
 	render()
