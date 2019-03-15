@@ -1,3 +1,17 @@
+@font-face {
+font-family: 'rkv';
+font-style: normal;
+font-weight: normal;
+src: local('RIKY2vamp'), url('./fonts/RIKY2vamp.woff') format('woff');
+}
+
+@font-face {
+font-family: 'ecr';
+font-style: normal;
+font-weight: normal;
+src: local('ethnocentricrg'), url('./fonts/ethnocentricrg.woff') format('woff');
+}
+
 .img-long img
 {	border-radius: 2rem ;
 	width: 450px;
@@ -8,5 +22,23 @@
 .content, .img-long
 {
 	display: inline-block;
-	width : 474px ; 
+	width : 474px ;
+	  
+}
+
+.content
+{
+	border : 10px solid #ffD3D7 ;
+}
+
+.heading
+{
+	font-size : 5rem ;
+	color: #8B0000 ;
+	font-family: 'ecr';
+}
+
+.rule
+{
+	margin-bottom: 2em ;
 }

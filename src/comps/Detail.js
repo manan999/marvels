@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CircleLoader from 'react-spinners/CircleLoader' ;
 
 import './details.css' ;
+import List from './List/List.js' ;
+import Item from './List/Item/Item.js' ;
 
 class Detail extends Component {
 	constructor()
@@ -55,17 +57,26 @@ class Detail extends Component {
 	}
 
 	render() {
-		console.log(this.state) ;
+		let {name, realname, biglink, combt, country, first, gender} = this.state.data ;
+		let {intel, magic, origin, speed, stren, universe, tough} = this.state.data ;
+		let items = [realname, gender, universe, origin, country] ;
+		let titles = ['Real Name:', 'Gender:', 'Universe:', 'Species:', 'Nationality:'] ;
+		//console.log(this.state) ;
+		console.log(items) ;
 		if( this.state.data )
 		{
 			return (
 				<div>
 					<div className="panel">
-						<div className="content" >
-							{this.state.data.name + ' ' + this.state.data.realname}
-						</div>
+						<hr color="#E70013" />
+						<h1 className="heading"> {name} </h1> 
+						<hr color="#E70013" className="rule"/>
 						<div className="img-long">
-							<img src={this.state.data.biglink} alt={this.state.data.name}/>
+							<img src={biglink} alt={name}/>
+						</div>
+						<div className="content" >
+							<List titles={titles} items={items}/>
+							<Item title="First Appearance: " value={first} className="out-list"/>
 						</div>
 					</div>
 				</div>
