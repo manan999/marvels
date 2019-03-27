@@ -26,7 +26,7 @@ class Detail extends Component {
 	getHeroData = () => {
 		if(this.state.type === 'hero')
 		{
-			fetch('http://magic-brain-api.herokuapp.com/bigh?name=' + this.state.name)
+			fetch('http://mrvl-api.herokuapp.com/bigh?name=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -41,7 +41,7 @@ class Detail extends Component {
 		}
 		else
 		{
-			fetch('http://magic-brain-api.herokuapp.com/bigv?name=' + this.state.name)
+			fetch('http://mrvl-api.herokuapp.com/bigv?name=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -62,7 +62,7 @@ class Detail extends Component {
 		let items = [realname, gender, universe, origin, country] ;
 		let titles = ['Real Name:', 'Gender:', 'Universe:', 'Species:', 'Nationality:'] ;
 		//console.log(this.state) ;
-		console.log(items) ;
+		//console.log(items) ;
 		if( this.state.data )
 		{
 			return (

@@ -1,5 +1,6 @@
-1. Set CSS for specific page 
-2. Add Slide show component after 'npm install react-slideshow-image -S'
+1. Set CSS for specific page manily bio and stats
+2. Create Team detail page 
+3. Add Slide show component 
 
-1. Create table team (Whoop)
-2. Create table Story (Yay!)
+1. Create table Story (Yay!)
+2. Add Searching endpoints

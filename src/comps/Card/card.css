@@ -10,6 +10,7 @@
 	box-shadow : 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ); 
 	text-align: center;
 	transition: all 0.1s ;
+	overflow: hidden; 
 }
 
 .yes
@@ -49,7 +50,6 @@
 {
 	transform: scale(1.05) ;
 }
-
 
 @media (max-width: 600px) {
   .cards
