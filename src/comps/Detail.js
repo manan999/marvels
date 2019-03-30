@@ -4,6 +4,7 @@ import CircleLoader from 'react-spinners/CircleLoader' ;
 import './details.css' ;
 import List from './List/List.js' ;
 import Item from './List/Item/Item.js' ;
+import Circle from './Circle/Circle.js' ;
 
 class Detail extends Component {
 	constructor()
@@ -69,15 +70,23 @@ class Detail extends Component {
 				<div>
 					<div className="panel">
 						<hr color="#E70013" />
-						<h1 className="heading"> {name} </h1> 
+						<h1 className="heading focus-in-expand"> {name} </h1> 
 						<hr color="#E70013" className="rule"/>
-						<div className="img-long">
-							<img src={biglink} alt={name}/>
+						<div> 
+							<div className="img-long fade-in">
+								<img src={biglink} alt={name}/>
+							</div>
+							<div className="content" >
+								<List titles={titles} items={items}/>
+								<Item title="First Appearance: " value={first} className="out-list"/>
+							</div>
 						</div>
-						<div className="content" >
-							<List titles={titles} items={items}/>
-							<Item title="First Appearance: " value={first} className="out-list"/>
-						</div>
+					    <Circle num={intel} text="Intelligence" />
+					    <Circle num={combt} text="Combat" />
+					    <Circle num={stren} text="Strength" />
+					    <Circle num={speed} text="Speed" />
+					    <Circle num={tough} text="Toughness" />
+					    <Circle num={magic} text="Magical" />
 					</div>
 				</div>
 			);

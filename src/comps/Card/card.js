@@ -42,7 +42,7 @@ class Card extends React.Component
 	render()
 	{	const str = 'cards ' + this.state.big ;
 		return (
-			<div className={str} onClick={this.onCardClick}>
+			<div className={str} data-aos="zoom-in" onClick={this.onCardClick}>
 				<img src = {this.props.link} alt = 'Cap_Ame' />
 				<div>
 					<h2> {this.checkNum()} </h2>

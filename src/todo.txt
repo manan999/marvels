@@ -1,6 +1,8 @@
-1. Set CSS for specific page manily bio and stats
+1. Set CSS for specific page manily bio 
 2. Create Team detail page 
-3. Add Slide show component 
+
+Optional : Fix blurry zoomed images
 
 1. Create table Story (Yay!)
-2. Add Searching endpoints
+2. Add Searching endpoints for team
+3. Add similar endopints for story

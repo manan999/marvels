@@ -6,12 +6,14 @@
 	font-size : 2.4rem ;
 }
 
+
 #r
 {	
 	font-size : 2.3rem ;
 	text-align: right; 
 	color : #8B0000;
 	line-height: 1em ;
+	font-family: 'Ubuntu', cursive;
 }
 
 .up

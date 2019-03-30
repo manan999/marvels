@@ -1,0 +1,9 @@
+.each-fade .image-container
+{
+	width : 100%;
+	overflow: hidden ;
+}
+.each-face h2
+{
+	width : 0 ;
+}

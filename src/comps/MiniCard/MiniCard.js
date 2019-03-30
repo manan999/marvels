@@ -9,7 +9,7 @@ class MiniCard extends Component {
 		{	//console.log('im here')
 			return (
 				<div className="next" >
-					<Link to={this.props.path}> More </Link> 
+					<Link className="heartbeat" to={this.props.path}> More </Link> 
 				</div>
 			) ;
 		}

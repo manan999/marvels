@@ -51,6 +51,11 @@
 	transform: scale(1.05) ;
 }
 
+.aos-init:hover
+{
+	transform: scale(1.05) !important ;
+}
+
 @media (max-width: 600px) {
   .cards
  { 	border-radius: 0.5rem ;

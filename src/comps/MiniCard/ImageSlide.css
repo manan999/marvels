@@ -1,7 +1,15 @@
 .image
 {
-	background-image: url('../img/m1.png') ;
 	height: 28em ;
 	width: auto ;
 	background-size: cover;
+	padding : 1px ;
+	overflow: hidden;
+	width: 100% ; 
+}
+
+.fl
+{
+	display: flex; 
+	flex-wrap: wrap;
 }
