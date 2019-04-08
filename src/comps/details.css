@@ -1,11 +1,4 @@
 @font-face {
-font-family: 'rkv';
-font-style: normal;
-font-weight: normal;
-src: local('RIKY2vamp'), url('./fonts/RIKY2vamp.woff') format('woff');
-}
-
-@font-face {
 font-family: 'ecr';
 font-style: normal;
 font-weight: normal;
@@ -44,7 +37,7 @@ src: local('ethnocentricrg'), url('./fonts/ethnocentricrg.woff') format('woff');
 }
 
 .focus-in-expand {
-	animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.7s both;
+	animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
 }
 
 .scale-in-center {

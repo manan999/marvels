@@ -21,10 +21,10 @@ class Detail extends Component {
 		let str = window.location.pathname ;
 		str = str.slice(1).replace(/%20/g, ' ') ;
 		str = str.split('/') ;
-		this.setState({ type: str[0] , name: str[1] }, () => this.getHeroData() );
+		this.setState({ type: str[0] , name: str[1] }, () => this.getCharData() );
 	}
 
-	getHeroData = () => {
+	getCharData = () => {
 		if(this.state.type === 'hero')
 		{
 			fetch('http://mrvl-api.herokuapp.com/bigh?name=' + this.state.name)
@@ -64,7 +64,7 @@ class Detail extends Component {
 		let titles = ['Real Name:', 'Gender:', 'Universe:', 'Species:', 'Nationality:'] ;
 		//console.log(this.state) ;
 		//console.log(items) ;
-		if( this.state.data )
+		if( this.state.data.hasOwnProperty('name') )
 		{
 			return (
 				<div>
@@ -95,8 +95,8 @@ class Detail extends Component {
 			return (
 				<div>
 					<div className="panel">
-						<CircleLoader sizeUnit={"px"} size={150} color={'#e70013'} loading={true} />
-						Loading ...
+						<CircleLoader sizeUnit={"px"} size={250} color={'#e70013'} loading={true} />
+						<h2> Loading ... </h2>
 					</div>  
 				</div>
 			) ;

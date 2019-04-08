@@ -1,5 +1,6 @@
 1. Set CSS for specific page manily bio 
 2. Create Team detail page 
+3. Add scroll pop class on stats
 
 Optional : Fix blurry zoomed images
 

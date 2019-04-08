@@ -7,7 +7,7 @@ import './circle.css' ;
  class Circle extends Component {
 	render() {
 		return (
-			<div className="cir">
+			<div className="cir" data-aos="zoom-in">
 			  <p className="lbl"> {this.props.text} </p> 		
 		      <CircularProgressbar
 		        percentage={this.props.num}
