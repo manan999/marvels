@@ -47,7 +47,7 @@ class BigDetail extends Component {
 	}
 
 	render() {
-		console.log(this.state.data) ;
+	//	console.log(this.state.data) ;
 		if( this.state.data.hasOwnProperty('0') )
 		{	return (
 				<div>

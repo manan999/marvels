@@ -14,6 +14,7 @@ class ConSearch extends Component {
 		}
 	}
 
+
 	componentDidMount() {
 		fetch(this.props.url)
 		.then( res => {
@@ -41,6 +42,17 @@ class ConSearch extends Component {
 			return 'med' ; 
 	}
 
+	calcPath = () => {
+		switch(this.props.title)
+		{
+			case 'HEROES' : return 'hero/' ;
+			case 'VILLAINS' : return 'villain/' ;
+			case 'STORIES' : return 'story/' ;
+			case 'Teams' : return 'team/' ;
+			default : return '' ;
+		}
+	}
+
 	render() {
 		// console.log(this.state.cards) ;
 		const arr = this.state.cards.filter(card => {
@@ -53,7 +65,7 @@ class ConSearch extends Component {
 			<div className="panel">
 				<Logo title={this.props.title} />
 				<Searchbar searchChange={this.onSC} />
-				<CardList arr={arr} big={str}/> 
+				<CardList arr={arr} big={str} path={this.calcPath()}/> 
 			</div>
 		);
 	}

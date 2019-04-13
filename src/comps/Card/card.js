@@ -2,7 +2,6 @@ import React from 'react' ;
 import { withRouter } from 'react-router-dom' ;
 
 import './card.css' ;
-//import 'tachyons' ;
 
 class Card extends React.Component
 {
@@ -28,15 +27,22 @@ class Card extends React.Component
 	onCardClick = () => {
 		let str ;
 		if(this.props.path)
-		{	str = window.location.pathname + this.props.path + this.props.name ;
-			this.props.history.push(str) ;
-			// console.log(str) ;
-		}
-		else
-		{	//console.log(this.props) ;
-			str = window.location.pathname + '/' + this.props.name ;
+		{	str = this.props.path + this.props.name ;
+			if(window.location.pathname.length > 10 )
+				this.props.history.push('/') ;
 			this.props.history.push(str) ;
 		}
+
+		// if(this.props.path)
+		// {	str = window.location.pathname + this.props.path + this.props.name ;
+		// 	this.props.history.push(str) ;
+		// 	// console.log(str) ;
+		// }
+		// else
+		// {	//console.log(this.props) ;
+		// 	str = window.location.pathname + '/' + this.props.name ;
+		// 	this.props.history.push(str) ;
+		// }
 	}
 	
 	render()

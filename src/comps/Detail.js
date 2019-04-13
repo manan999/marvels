@@ -14,6 +14,7 @@ class Detail extends Component {
 			type : '' ,
 			name : '' ,
 			data : {} ,
+			teamData : {} ,
 		}
 	}
 
@@ -36,7 +37,7 @@ class Detail extends Component {
 		          } )
 		    .then( resp => {
 		            // console.log(resp) ;
-		            this.setState({data: resp[0]});
+		            this.setState({data: resp[0]}, () => this.fetchMoreHeroData() );
 		                	} )
 		    .catch( err => console.log(err) ) ;
 		}
@@ -55,6 +56,21 @@ class Detail extends Component {
 		                	} )
 		    .catch( err => console.log(err) ) ;
 		}		
+	}
+
+	fetchMoreHeroData = () => {
+		fetch('http://mrvl-api.herokuapp.com/tsph?ch=' + this.state.data.id)
+		.then( res => {
+			    if ( res.ok )
+	              return res.json() ;
+	            else 
+	              throw Error(res.statusText)
+	          } )
+	    .then( resp => {
+	            console.log(resp) ;
+	            this.setState({teamData: resp});
+	                	} )
+	    .catch( err => console.log(err) ) ;
 	}
 
 	render() {
