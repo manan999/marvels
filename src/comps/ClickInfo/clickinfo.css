@@ -1,0 +1,32 @@
+.ci-head
+{
+	font-weight: bold ;
+	font-size : 2.4rem ;
+	color : black ;
+	display: inline-block;
+	margin-left: 1.8em ; 
+}
+
+.ci-btn
+{
+	text-decoration: none;
+	color : gainsboro !important;
+	background-color: #8B0000 ;
+	padding : 1vh ;
+	margin-right : 3.2em;
+	font-size : 1.5rem ;
+	border-radius: 0.4rem ;
+	transition: all 0.5s ;
+}
+
+.ci-btn:hover
+{
+	transform: scale(1.2) ;
+}
+
+.ci-con
+{
+	display: flex ;
+	justify-content: space-between;
+	margin: 2em;
+}

@@ -5,6 +5,8 @@ import './details.css' ;
 import List from './List/List.js' ;
 import Item from './List/Item/Item.js' ;
 import Circle from './Circle/Circle.js' ;
+import ClickInfo from './ClickInfo/ClickInfo.js' ;
+import CardList from './Card/cardlist.js' ;
 
 class Detail extends Component {
 	constructor()
@@ -97,12 +99,20 @@ class Detail extends Component {
 								<Item title="First Appearance: " value={first} className="out-list"/>
 							</div>
 						</div>
-					    <Circle num={intel} text="Intelligence" />
-					    <Circle num={combt} text="Combat" />
-					    <Circle num={stren} text="Strength" />
-					    <Circle num={speed} text="Speed" />
-					    <Circle num={tough} text="Toughness" />
-					    <Circle num={magic} text="Magical" />
+						<div>  
+						    <Circle num={intel} text="Intelligence" />
+						    <Circle num={combt} text="Combat" />
+						    <Circle num={stren} text="Strength" />
+						    <Circle num={speed} text="Speed" />
+						    <Circle num={tough} text="Toughness" />
+						    <Circle num={magic} text="Magical" />
+						</div>
+						<ClickInfo title="Teams">
+							<CardList arr={this.state.teamData} big="med" path="team/" />
+						</ClickInfo>
+						<ClickInfo title="Stories">
+							<p> Coming Soon... </p>
+						</ClickInfo>
 					</div>
 				</div>
 			);
@@ -111,8 +121,10 @@ class Detail extends Component {
 			return (
 				<div>
 					<div className="panel">
-						<CircleLoader sizeUnit={"px"} size={250} color={'#e70013'} loading={true} />
-						<h2> Loading ... </h2>
+						<div className="loader">
+							<CircleLoader sizeUnit={"px"} size={350} color={'#e70013'} loading={true}/>
+						</div>
+						<h2 className="load-text"> Loading ... </h2>
 					</div>  
 				</div>
 			) ;

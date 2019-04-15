@@ -1,5 +1,4 @@
-1. Set CSS for detail.js manily bio and TEAMS 
-
+1. Set CSS for detail.js manily bio 
 1. Add villain Records
 
 1. Create table Story (Yay!)

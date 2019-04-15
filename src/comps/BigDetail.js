@@ -64,8 +64,10 @@ class BigDetail extends Component {
 			return (
 				<div>
 					<div className="panel">
-						<CircleLoader sizeUnit={"px"} size={250} color={'#e70013'} loading={true} />
-						<h2> Loading ... </h2>
+						<div className="loader">
+							<CircleLoader sizeUnit={"px"} size={350} color={'#e70013'} loading={true}/>
+						</div>
+						<h2 className="load-text"> Loading ... </h2>
 					</div>  
 				</div>
 			) ;
