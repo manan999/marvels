@@ -39,7 +39,7 @@ class Detail extends Component {
 		          } )
 		    .then( resp => {
 		            // console.log(resp) ;
-		            this.setState({data: resp[0]}, () => this.fetchMoreHeroData() );
+		            this.setState({data: resp[0]}, () => this.fetchMoreHeroData('h') );
 		                	} )
 		    .catch( err => console.log(err) ) ;
 		}
@@ -54,14 +54,14 @@ class Detail extends Component {
 		          } )
 		    .then( resp => {
 		            // console.log(resp) ;
-		            this.setState({data: resp[0]});
+		            this.setState({data: resp[0]}, () => this.fetchMoreHeroData('v'));
 		                	} )
 		    .catch( err => console.log(err) ) ;
 		}		
 	}
 
-	fetchMoreHeroData = () => {
-		fetch('http://mrvl-api.herokuapp.com/tsph?ch=' + this.state.data.id)
+	fetchMoreHeroData = (ch) => {
+		fetch('http://mrvl-api.herokuapp.com/tsp' + ch + '?ch=' + this.state.data.id)
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
