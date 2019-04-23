@@ -32,17 +32,6 @@ class Card extends React.Component
 				this.props.history.push('/') ;
 			this.props.history.push(str) ;
 		}
-
-		// if(this.props.path)
-		// {	str = window.location.pathname + this.props.path + this.props.name ;
-		// 	this.props.history.push(str) ;
-		// 	// console.log(str) ;
-		// }
-		// else
-		// {	//console.log(this.props) ;
-		// 	str = window.location.pathname + '/' + this.props.name ;
-		// 	this.props.history.push(str) ;
-		// }
 	}
 	
 	render()
