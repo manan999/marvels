@@ -11,7 +11,8 @@ class BigDetail extends Component {
 		this.state = {
 			type : '' ,
 			name : '' ,
-			data : {} ,
+			dataH : {} ,
+			dataV : {} ,
 		}
 	}
 
@@ -25,7 +26,7 @@ class BigDetail extends Component {
 
 	getTeamStoryData = () => {
 		if(this.state.type === 'team')
-		{	fetch('http://mrvl-api.herokuapp.com/tspv?team=' + this.state.name)
+		{	fetch('http://mrvl-api.herokuapp.com/tsph?team=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -34,7 +35,19 @@ class BigDetail extends Component {
 		          } )
 		    .then( resp => {
 		            //console.log(resp) ;
-		            this.setState({data: resp});
+		            this.setState({dataH: resp});
+		            	} )
+		    .catch( err => console.log(err) ) ;
+		    fetch('http://mrvl-api.herokuapp.com/tspv?team=' + this.state.name)
+			.then( res => {
+				    if ( res.ok )
+		              return res.json() ;
+		            else 
+		              throw Error(res.statusText)
+		          } )
+		    .then( resp => {
+		            //console.log(resp) ;
+		            this.setState({dataV: resp});
 		            	} )
 		    .catch( err => console.log(err) ) ;
 		}
@@ -46,16 +59,27 @@ class BigDetail extends Component {
 		this.format() ;
 	}
 
+	checkHeroLoaded = () => {
+		if(this.state.dataH.hasOwnProperty('0'))
+			return <CardList arr={this.state.dataH} big="yes" path="hero/" /> ;
+	}
+
+	checkVillLoaded = () => {
+		if(this.state.dataV.hasOwnProperty('0'))
+			return <CardList arr={this.state.dataV} big="yes" path="villain/" /> ;
+	}
+
 	render() {
-	//	console.log(this.state.data) ;
-		if( this.state.data.hasOwnProperty('0') )
+		console.log(this.state) ;
+		if( this.state.dataV.hasOwnProperty('0') || this.state.dataH.hasOwnProperty('0'))
 		{	return (
 				<div>
 					<div className="panel">
 						<hr color="#E70013" />
 						<h1 className="heading focus-in-expand"> {this.state.name} </h1> 
 						<hr color="#E70013" className="rule"/>
-						<CardList arr={this.state.data} big="yes" path="hero/" />
+						{ this.checkHeroLoaded() }
+						{ this.checkVillLoaded() }						
 					</div>
 				</div>
 			);

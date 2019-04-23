@@ -4,7 +4,7 @@ import Card from './card.js' ;
 const Cardlist = (props) => {
 	// const cardl = 
 	return (
-		<div>
+		<div className="cardlist">
 			{   props.arr.map( (user, i) => {
 					return (<Card key={i} id={user.id} name={user.name} path={props.path}
 								  rn={user.realname} link={user.link} big={props.big}/>) ;

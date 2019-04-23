@@ -28,7 +28,7 @@ class Card extends React.Component
 		let str ;
 		if(this.props.path)
 		{	str = this.props.path + this.props.name ;
-			if(window.location.pathname.length > 10 )
+			if(window.location.pathname.length > 8 )
 				this.props.history.push('/') ;
 			this.props.history.push(str) ;
 		}
