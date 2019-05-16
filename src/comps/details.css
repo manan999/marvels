@@ -9,9 +9,9 @@ src: local('ethnocentricrg'), url('./fonts/ethnocentricrg.woff') format('woff');
 
 .bio p
 {
-  font-size: 2.6rem ;
+  font-size: 2rem ;
   font-family: 'Rubik' ;
-  line-height: 1.3em ;
+  line-height: 1.4em ;
 }
 
 b
