@@ -69,7 +69,7 @@ class Detail extends Component {
 	              throw Error(res.statusText)
 	          } )
 	    .then( resp => {
-	            console.log(resp) ;
+	            //console.log(resp) ;
 	            this.setState({teamData: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
@@ -80,8 +80,9 @@ class Detail extends Component {
 		let {intel, magic, origin, speed, stren, universe, tough} = this.state.data ;
 		let items = [realname, gender, universe, origin, country] ;
 		let titles = ['Real Name:', 'Gender:', 'Universe:', 'Species:', 'Nationality:'] ;
-		//console.log(this.state) ;
-		//console.log(items) ;
+		// console.log(this.state) ;
+		// console.log(items) ;
+		// console.log(this.state.data.bio) ;
 		if( this.state.data.hasOwnProperty('name') )
 		{
 			return (
@@ -90,6 +91,9 @@ class Detail extends Component {
 						<hr color="#E70013" />
 						<h1 className="heading focus-in-expand"> {name} </h1> 
 						<hr color="#E70013" className="rule"/>
+						<div className="bio">
+							<p dangerouslySetInnerHTML={{ __html: this.state.data.bio }} />
+						</div>
 						<div> 
 							<div className="img-long fade-in">
 								<img src={biglink} alt={name}/>

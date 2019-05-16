@@ -5,6 +5,20 @@ font-weight: normal;
 src: local('ethnocentricrg'), url('./fonts/ethnocentricrg.woff') format('woff');
 }
 
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+.bio p
+{
+  font-size: 2.6rem ;
+  font-family: 'Rubik' ;
+  line-height: 1.3em ;
+}
+
+b
+{
+  font-weight: 900 ;
+}
+
 .img-long img
 {	border-radius: 2rem ;
 	width: 450px;
