@@ -21,3 +21,17 @@ h2
 {	font-weight: 900 ;
 	font-size: 2rem ;
 }
+
+@media  (max-width: 600px) {
+	
+	.panel
+	{
+		margin: 10vh 0vh 4vh ;
+		padding: 4vh 4vw ;
+	}	
+
+	h2
+	{
+		font-size: 7vw;
+	}
+}

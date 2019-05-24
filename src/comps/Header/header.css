@@ -44,3 +44,21 @@
 {
 	transform: scale(1.1) ;
 }
+
+@media  (max-width: 600px) {
+	#logo
+	{	
+		margin: 0.3em 0em 0.5em 0.5em;
+	}
+
+	.ui.secondary.pointing.menu .item
+	{
+		padding-right: 0.25em ;
+		padding-left: 0.25em ;
+	}
+
+	.item:hover
+	{
+		transform: scale(1);
+	}
+}

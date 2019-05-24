@@ -21,3 +21,27 @@
 	width : 40vw;
 	text-align: center; 
 }
+
+@media  (max-width: 600px) {
+	.nf
+	{
+		width: 80vw ;
+	}
+
+	.f04
+	{
+		font-size: 5rem ;
+		margin : 0 ;
+	}
+
+	.f03
+	{	margin : 0;
+		font-size: 3.2rem ;
+	}
+
+	.taunt
+	{
+		font-size: 5.2vw ;
+		margin: 1rem 0;
+	}
+}
