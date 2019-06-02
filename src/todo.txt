@@ -1,6 +1,7 @@
-1. Set CSS for detail.js manily bio 
-1. Add villain Records
+1. Add villain bio Records
 
 1. Create table Story (Yay!)
 2. Add Searching endpoints for team for villain
 3. Add similar endopints for story
+
+1. Add photos for mobile devices in slideshow component

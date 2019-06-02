@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import CardList from '../Card/cardlist.js' ;
 
 class HeroCard extends Component {
+
 	render() {
 		return (
 			<div>

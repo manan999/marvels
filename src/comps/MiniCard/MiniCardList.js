@@ -19,7 +19,7 @@ class MiniCardList extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://mrvl-api.herokuapp.com/hero?limit=5')
+		fetch('http://mrvl-api.herokuapp.com/hero?limit=7')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -31,7 +31,7 @@ class MiniCardList extends Component {
 	            this.setState({hero: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
-	    fetch('http://mrvl-api.herokuapp.com/vill?limit=5')
+	    fetch('http://mrvl-api.herokuapp.com/vill?limit=7')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -71,16 +71,17 @@ class MiniCardList extends Component {
 
 	render() {
 		//console.log(this.state) ;
+		let x = ((window.screen.availWidth < 600 && window.screen.availWidth > 325 ) ? 6 : 4 ) ;
 		return (
 			<div>
 				<MiniCard head="WELCOME!" path='/gallery'>
 					<ImageSlide />
 				</MiniCard>
 				<MiniCard head="HEROES!" path='/hero'>
-					<HeroCard hero={this.state.hero.slice(0, 4)}/>
+					<HeroCard hero={this.state.hero.slice(0, x)}/>
 				</MiniCard>
 				<MiniCard head="VILLAINS!" path='/villain'>
-					<VillainCard vill={this.state.villain.slice(0, 4)}/>
+					<VillainCard vill={this.state.villain.slice(0, x)}/>
 				</MiniCard>
 				<MiniCard head="STORIES!" path='/story'>
 					<StoryCard story={this.state.story.slice(0, 4)}/>
