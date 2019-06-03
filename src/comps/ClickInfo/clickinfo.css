@@ -30,3 +30,31 @@
 	justify-content: space-between;
 	margin: 2em;
 }
+
+@media (max-width: 600px) {
+	.ci-head
+	{
+		font-size : 7vw ;
+		margin-left: 8.4vw ;
+		margin-top: 2.1vw !important; 
+	}
+
+	.ci-btn
+	{
+		padding : 1vw ;
+		margin-right : 8.86vw ;
+		font-size : 4.43vw ;
+		width: 24.35vw ;
+		height: 12.17vw ;
+	}
+
+	.ci-btn:hover
+	{
+		transform: scale(1.0) ;
+	}
+
+	.ci-con
+	{
+		margin: 0.5em;
+	}
+}

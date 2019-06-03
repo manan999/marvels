@@ -103,3 +103,38 @@ b
     opacity: 1;
   }
 }
+
+@media (max-width: 600px) {
+  .loader
+  {   margin-left: 11vh ;
+  }
+
+  .bio p
+  {
+    font-size: 1.1rem ;
+    line-height: 1.2em ;
+  }
+
+  .bio , .rule
+  {
+    margin-bottom: 1em ;
+  }
+
+  .heading
+  {
+    font-size : 8.5vw ;
+  }
+
+  .img-long img
+  { border-radius: 2rem ;
+    width: 73vw;
+    height: 109vw ;
+    border : 6px solid #E70013 ;
+  }
+
+  .content, .img-long
+  {
+    display: inline-block;
+    width : 88.5vw ;
+  }
+}

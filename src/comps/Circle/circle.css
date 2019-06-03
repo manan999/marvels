@@ -1,7 +1,6 @@
 .cir
 {	margin: 2.3em 1em 0.5em ;
 	width : 20vw ;
-	/*border : 1px solid black;*/
 	display: inline-block; 
 	padding: 1em 3em ;
 }
@@ -10,4 +9,16 @@
 {
 	font-family: 'Ubuntu', cursive;
 	font-size: 2.5rem ;
+}
+
+@media (max-width: 600px) {
+	.cir
+	{	margin: 1em 1em 0.5em ;
+		width : 20vw ;
+		padding: 0 ;
+	}
+	.lbl
+	{
+		font-size: 4.7vw ;
+	}
 }

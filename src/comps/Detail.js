@@ -122,16 +122,18 @@ class Detail extends Component {
 			);
 		}
 		else
+		{	let size = ((window.screen.availWidth < 600 ) ? 150 : 350 ) ;
 			return (
 				<div>
 					<div className="panel">
 						<div className="loader">
-							<CircleLoader sizeUnit={"px"} size={350} color={'#e70013'} loading={true}/>
+							<CircleLoader sizeUnit={"px"} size={size} color={'#e70013'} loading={true}/>
 						</div>
 						<h2 className="load-text"> Loading ... </h2>
 					</div>  
 				</div>
 			) ;
+		}
 	}
 }
 
