@@ -63,3 +63,10 @@
     animation-timing-function: ease-out;
   }
 }
+
+@media (max-width: 600px) {
+  h3
+  {
+    font-size: 1.2rem ;
+  }
+  }

@@ -1,0 +1,11 @@
+.burger a
+{
+	border-bottom: 1px solid red !important;
+	padding-left : 4em !important;
+}
+
+.burger, .cheeseburger-menu-inner
+{
+	background-color: #e70013 ;
+}
+

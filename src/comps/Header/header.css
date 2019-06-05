@@ -34,6 +34,11 @@
 	font-family : 'Teko', sans-serif ;
 }
 
+.mini-menu
+{
+	display: flex ;
+}
+
 .item:hover
 {
 	background-color: #C60010 !important;
@@ -55,6 +60,19 @@
 	{
 		padding-right: 0.25em ;
 		padding-left: 0.25em ;
+	}
+
+	.ui.secondary.pointing.menu > div
+	{
+		/*border: 2px solid white ;*/
+		padding-right: 6.1vw ;
+		padding-top: 2.9vh ;
+		padding-left: 3.7vw ;
+	}
+
+	.ui.secondary.pointing.menu>div:hover
+	{
+		background-color: #C60010 !important;
 	}
 
 	.item:hover

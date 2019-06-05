@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom' ;
 import { ScrollContext } from 'react-router-scroll-4';
 
+
 import './App.css' ;
 import Header from './comps/Header/Header.js' ;
 import Home from './comps/Home/Home.js' ;
@@ -37,7 +38,7 @@ class App extends Component {
         </ScrollContext>
         </BrowserRouter>
       </div>
-    );
+      );
   }
 }
 
