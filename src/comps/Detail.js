@@ -30,7 +30,7 @@ class Detail extends Component {
 	getCharData = () => {
 		if(this.state.type === 'hero')
 		{
-			fetch('http://mrvl-api.herokuapp.com/bigh?name=' + this.state.name)
+			fetch('https://mrvl-api.herokuapp.com/bigh?name=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -45,7 +45,7 @@ class Detail extends Component {
 		}
 		else
 		{
-			fetch('http://mrvl-api.herokuapp.com/bigv?name=' + this.state.name)
+			fetch('https://mrvl-api.herokuapp.com/bigv?name=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -61,7 +61,7 @@ class Detail extends Component {
 	}
 
 	fetchMoreHeroData = (ch) => {
-		fetch('http://mrvl-api.herokuapp.com/tsp' + ch + '?ch=' + this.state.data.id)
+		fetch('https://mrvl-api.herokuapp.com/tsp' + ch + '?ch=' + this.state.data.id)
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;

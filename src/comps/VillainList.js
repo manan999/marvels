@@ -6,7 +6,7 @@ class VillainList extends Component {
 	render() {
 		return (
 			<div>
-				<ConSearch title="VILLAINS" url="http://mrvl-api.herokuapp.com/vill" />
+				<ConSearch title="VILLAINS" url="https://mrvl-api.herokuapp.com/vill" />
 			</div>
 		);
 	}

@@ -6,7 +6,7 @@ class TeamList extends Component {
 	render() {
 		return (
 			<div>
-				<ConSearch title="Teams" url="http://mrvl-api.herokuapp.com/team" />
+				<ConSearch title="Teams" url="https://mrvl-api.herokuapp.com/team" />
 			</div>
 		);
 	}

@@ -26,7 +26,7 @@ class BigDetail extends Component {
 
 	getTeamStoryData = () => {
 		if(this.state.type === 'team')
-		{	fetch('http://mrvl-api.herokuapp.com/tsph?team=' + this.state.name)
+		{	fetch('https://mrvl-api.herokuapp.com/tsph?team=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -38,7 +38,7 @@ class BigDetail extends Component {
 		            this.setState({dataH: resp});
 		            	} )
 		    .catch( err => console.log(err) ) ;
-		    fetch('http://mrvl-api.herokuapp.com/tspv?team=' + this.state.name)
+		    fetch('https://mrvl-api.herokuapp.com/tspv?team=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
