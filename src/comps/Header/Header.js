@@ -11,7 +11,13 @@ class Header extends React.Component
 {
 	constructor(props) {
 	    super(props)
-
+	    this.classMenu = {
+	    	home : 'item link' ,
+	    	hero : 'item link' ,
+	    	vill : 'item link' ,
+	    	team : 'item link' ,
+	    	story : 'item link'
+	    } ;
 	    this.state = {
 	      menuOpen: false,
 	    }
@@ -30,11 +36,11 @@ class Header extends React.Component
 		if(window.screen.availWidth > 600)
 		{	return (
 				<div className="mini-menu">
-					<Link className="item link" to='/'> Home </Link>
-					<Link className="item link" to='/hero'> Heroes </Link>
-					<Link className="item link" to='/villain'> Villains </Link>
-					<Link className="item link" to='/team'> Teams </Link>
-					<Link className="item link" to='/story'> Stories </Link>
+					<Link className={this.classMenu.home} to='/'> Home </Link>
+					<Link className={this.classMenu.hero} to='/hero'> Heroes </Link>
+					<Link className={this.classMenu.vill} to='/villain'> Villains </Link>
+					<Link className={this.classMenu.team} to='/team'> Teams </Link>
+					<Link className={this.classMenu.story} to='/story'> Stories </Link>
 				</div>
 				) ;
 		}
@@ -53,7 +59,29 @@ class Header extends React.Component
 		}
 	}
 
+	addOk = (str) => {
+		let str2 = 'item link' ;
+		let str4 = ' ok' ;
+		this.classMenu.hero = this.classMenu.team = this.classMenu.story = str2 ;
+		this.classMenu.vill = this.classMenu.home = str2 ;
+		switch(str)
+		{
+			case '/hero' : this.classMenu.hero += str4 ;
+						   break ;
+			case '/villain' : this.classMenu.vill += str4 ;
+						   break ;
+			case '/' : this.classMenu.home += str4 ;
+						   break ;
+			case '/team' : this.classMenu.team += str4 ;
+						   break ;
+			case '/story' : this.classMenu.story += str4 ;
+						   break ;
+			default : str4 = ' ok' ;
+		}
+	} 
+
 	render = () => {
+		this.addOk(window.location.pathname) ;
 		return (
 			<div className="ui secondary pointing menu" id="bar"> 
 				<Link to="/" className="item link" id="logo"> MARVEL </Link> 

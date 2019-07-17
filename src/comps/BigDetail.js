@@ -13,6 +13,7 @@ class BigDetail extends Component {
 			name : '' ,
 			dataH : {} ,
 			dataV : {} ,
+			genData : {} ,
 		}
 	}
 
@@ -26,7 +27,19 @@ class BigDetail extends Component {
 
 	getTeamStoryData = () => {
 		if(this.state.type === 'team')
-		{	fetch('https://mrvl-api.herokuapp.com/tsph?team=' + this.state.name)
+		{	fetch('https://mrvl-api.herokuapp.com/team?name=' + this.state.name)
+			.then( res => {
+				    if ( res.ok )
+		              return res.json() ;
+		            else 
+		              throw Error(res.statusText)
+		          } )
+		    .then( resp => {
+		            console.log(resp[0]) ;
+		            this.setState({ genData : resp[0]});
+		                	} )
+		    .catch( err => console.log(err) ) ;
+			fetch('https://mrvl-api.herokuapp.com/tsph?team=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -70,7 +83,7 @@ class BigDetail extends Component {
 	}
 
 	render() {
-		console.log(this.state) ;
+		// console.log(this.state) ;
 		if( this.state.dataV.hasOwnProperty('0') || this.state.dataH.hasOwnProperty('0'))
 		{	return (
 				<div>
