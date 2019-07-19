@@ -1,9 +1,8 @@
-1. Add villain bio Records
-2. Add Images for new teams
+1. Add Images for new teams
 
 1. Create table Story (Yay!)
 2. Add bio for team
 3. Add similar endpoints for story
 
 1. Add photos for mobile devices in slideshow component
-2. Check and remove semantic UI from project
+2. Make CSS responsive

@@ -7,11 +7,13 @@ import Item from './List/Item/Item.js' ;
 import Circle from './Circle/Circle.js' ;
 import ClickInfo from './ClickInfo/ClickInfo.js' ;
 import CardList from './Card/cardlist.js' ;
+import BreadCrumb from './BreadCrumb/BreadCrumb.js' ;
 
 class Detail extends Component {
 	constructor()
 	{
-		super()
+		super() ;
+		this.crumbData = [] ;
 		this.state = {
 			type : '' ,
 			name : '' ,
@@ -24,7 +26,23 @@ class Detail extends Component {
 		let str = window.location.pathname ;
 		str = str.slice(1).replace(/%20/g, ' ') ;
 		str = str.split('/') ;
-		this.setState({ type: str[0] , name: str[1] }, () => this.getCharData() );
+		this.setState({ type: str[0] , name: str[1] }, () => {
+			this.crumbData = [
+			{
+				name: 'Home >' ,
+				link: '/'
+			} ,
+			{
+				name: this.state.type + ' >' ,
+				link: '/' + this.state.type 
+			} ,
+			{
+				name: this.state.name ,
+				link: '/' + this.state.type + '/' + this.state.name 
+			} 
+			] ;
+			this.getCharData() ;
+		} );
 	}
 
 	getCharData = () => {
@@ -80,14 +98,12 @@ class Detail extends Component {
 		let {intel, magic, origin, speed, stren, universe, tough} = this.state.data ;
 		let items = [realname, gender, universe, origin, country] ;
 		let titles = ['Real Name:', 'Gender:', 'Universe:', 'Species:', 'Nationality:'] ;
-		// console.log(this.state) ;
-		// console.log(items) ;
-		// console.log(this.state.data.bio) ;
 		if( this.state.data.hasOwnProperty('name') )
 		{
 			return (
 				<div>
 					<div className="panel">
+						<BreadCrumb data={this.crumbData}/>
 						<hr color="#E70013" />
 						<h1 className="heading focus-in-expand"> {name} </h1> 
 						<hr color="#E70013" className="rule"/>

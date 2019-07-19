@@ -1,0 +1,14 @@
+.crumb
+{
+	color: #e70013 ;
+	font-family: Teko ;
+	text-align: left ;
+	font-size: 1.5rem ;
+	display: flex ;
+}
+
+.crumb a
+{
+	color: #e70013 ;
+	margin : 0 0.1em ;
+}

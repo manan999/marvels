@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import CircleLoader from 'react-spinners/CircleLoader' ;
 
 import CardList from './Card/cardlist.js' ;
+import BreadCrumb from './BreadCrumb/BreadCrumb.js' ;
 import './details.css' ;
 
 class BigDetail extends Component {
 	constructor()
 	{
-		super()
+		super() ;
+		this.crumbData = [] ;
 		this.state = {
 			type : '' ,
 			name : '' ,
@@ -15,14 +17,6 @@ class BigDetail extends Component {
 			dataV : {} ,
 			genData : {} ,
 		}
-	}
-
-
-	format = () => {
-		let str = window.location.pathname ;
-		str = str.slice(1).replace(/%20/g, ' ') ;
-		str = str.split('/') ;
-		this.setState({ type: str[0] , name: str[1] }, () => this.getTeamStoryData()) ;
 	}
 
 	getTeamStoryData = () => {
@@ -64,12 +58,45 @@ class BigDetail extends Component {
 		            	} )
 		    .catch( err => console.log(err) ) ;
 		}
+		else if(this.state.type === 'story')
+		{	fetch('https://mrvl-api.herokuapp.com/story?name=' + this.state.name)
+			.then( res => {
+				    if ( res.ok )
+		              return res.json() ;
+		            else 
+		              throw Error(res.statusText)
+		          } )
+		    .then( resp => {
+		            console.log(resp[0]) ;
+		            this.setState({ genData : resp[0]});
+		                	} )
+		    .catch( err => console.log(err) ) ;
+		}
 		else
 			console.log(this.state.type, this.state.name) ;
 	}
 
 	componentDidMount = () => {
-		this.format() ;
+		let str = window.location.pathname ;
+		str = str.slice(1).replace(/%20/g, ' ') ;
+		str = str.split('/') ;
+		this.setState({ type: str[0] , name: str[1] }, () =>{
+			this.crumbData = [
+			{
+				name: 'Home >' ,
+				link: '/'
+			} ,
+			{
+				name: this.state.type + ' >' ,
+				link: '/' + this.state.type 
+			} ,
+			{
+				name: this.state.name ,
+				link: '/' + this.state.type + '/' + this.state.name 
+			} 
+			] ;
+			this.getTeamStoryData() ;
+		}) ;
 	}
 
 	checkHeroLoaded = () => {
@@ -88,11 +115,24 @@ class BigDetail extends Component {
 		{	return (
 				<div>
 					<div className="panel">
+						<BreadCrumb data={this.crumbData}/>
 						<hr color="#E70013" />
 						<h1 className="heading focus-in-expand"> {this.state.name} </h1> 
 						<hr color="#E70013" className="rule"/>
 						{ this.checkHeroLoaded() }
 						{ this.checkVillLoaded() }						
+					</div>
+				</div>
+			);
+		}
+		else if (this.state.type === 'story')
+		{	return (
+				<div>
+					<div className="panel">
+						<BreadCrumb data={this.crumbData}/>
+						<hr color="#E70013" />
+						<h1 className="heading focus-in-expand"> {this.state.name} </h1> 
+						<hr color="#E70013" className="rule"/>
 					</div>
 				</div>
 			);
