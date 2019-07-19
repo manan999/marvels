@@ -13,8 +13,8 @@ class BigDetail extends Component {
 		this.state = {
 			type : '' ,
 			name : '' ,
-			dataH : {} ,
-			dataV : {} ,
+			dataH : [] ,
+			dataV : [] ,
 			genData : {} ,
 		}
 	}
@@ -29,7 +29,8 @@ class BigDetail extends Component {
 		              throw Error(res.statusText)
 		          } )
 		    .then( resp => {
-		            console.log(resp[0]) ;
+		            // console.log(resp[0].member) ;
+		            // console.log(resp[0].leader) ;
 		            this.setState({ genData : resp[0]});
 		                	} )
 		    .catch( err => console.log(err) ) ;
@@ -100,14 +101,62 @@ class BigDetail extends Component {
 	}
 
 	checkHeroLoaded = () => {
-		if(this.state.dataH.hasOwnProperty('0'))
-			return <CardList arr={this.state.dataH} big="yes" path="hero/" /> ;
+		if(this.state.dataH.hasOwnProperty('0') && this.state.genData.leader)
+		{	const {leader, member} = this.state.genData ;
+			const hmem =  this.state.dataH.filter( item => member.includes(item.name)) ;
+			const hLeader =  this.state.dataH.filter( item => leader.includes(item.name)).concat(hmem) ;
+			return <CardList arr={this.state.dataH.filter( ( el ) => !hLeader.includes( el ) )} 
+							 big="yes" path="hero/" /> ;
+		}
+		else
+			return <CardList arr={this.state.dataH} big="yes" path="hero/" /> ;	
 	}
 
 	checkVillLoaded = () => {
-		if(this.state.dataV.hasOwnProperty('0'))
+		if(this.state.dataV.hasOwnProperty('0') && this.state.genData.leader)
+		{	const {leader, member} = this.state.genData ;
+			const vmem =  this.state.dataV.filter( item => member.includes(item.name)) ;
+			const vLeader =  this.state.dataV.filter( item => leader.includes(item.name)).concat(vmem) ;
+			return <CardList arr={this.state.dataV.filter( ( el ) => !vLeader.includes( el ) )} 
+							 big="yes" path="villain/" /> ;
+		}
+		else
 			return <CardList arr={this.state.dataV} big="yes" path="villain/" /> ;
 	}
+
+	filterLeader = () => {
+		if( this.state.genData.leader )
+		{	const {leader} = this.state.genData ;
+			const hLeader =  this.state.dataH.filter( item => leader.includes(item.name)) ;
+			const vLeader =  this.state.dataV.filter( item => leader.includes(item.name)) ;
+			return (
+			<div className="leader-list">
+				<CardList arr={hLeader} big="yes" path="hero/" /> 
+				<CardList arr={vLeader} big="yes" path="villain/" /> 
+			</div>
+			) ;
+			
+		}
+		else
+			return null ;
+	}
+
+	filterMember = () => {
+		if( this.state.genData.member )
+		{	const {member} = this.state.genData ;
+			const hmem =  this.state.dataH.filter( item => member.includes(item.name)) ;
+			const vmem =  this.state.dataV.filter( item => member.includes(item.name)) ;
+			return (
+			<div className="leader-list">
+				<CardList arr={hmem} big="yes" path="hero/" /> 
+				<CardList arr={vmem} big="yes" path="villain/" /> 
+			</div>
+			) ;
+			
+		}
+		else
+			return null ;
+	}	
 
 	render() {
 		// console.log(this.state) ;
@@ -119,6 +168,20 @@ class BigDetail extends Component {
 						<hr color="#E70013" />
 						<h1 className="heading focus-in-expand"> {this.state.name} </h1> 
 						<hr color="#E70013" className="rule"/>
+						<div className="bio">
+							<p dangerouslySetInnerHTML={{ __html: this.state.genData.bio }} />
+						</div>
+						<div className="title-con">
+							<h2 className="left-title"> Leader </h2>
+						</div>
+						{ this.filterLeader() }
+						<div className="title-con">
+							<h2 className="left-title"> Notable Members </h2>
+						</div>
+						{ this.filterMember() }
+						<div className="title-con">
+							<h2 className="left-title"> Other Members </h2>
+						</div>
 						{ this.checkHeroLoaded() }
 						{ this.checkVillLoaded() }						
 					</div>
@@ -143,7 +206,8 @@ class BigDetail extends Component {
 				<div>
 					<div className="panel">
 						<div className="loader">
-							<CircleLoader sizeUnit={"px"} size={size} color={'#e70013'} loading={true}/>
+							<CircleLoader sizeUnit={"px"} size={size} 
+							color={'#e70013'} loading={true}/>
 						</div>
 						<h2 className="load-text"> Loading ... </h2>
 					</div>  

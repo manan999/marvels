@@ -72,6 +72,35 @@ b
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
 }
 
+.left-title
+{
+  font-size: 3rem ;
+  border-bottom: 1px solid darkred ;
+  color: #8b0000 ;
+  font-family: 'Teko' ;
+  letter-spacing: 0.02em ;
+  display: inline-block; 
+  padding: 0 1em ;
+  transition: all 0.4s ;
+}
+
+.title-con
+{
+  margin: 1em ;
+  text-align: left ;
+}
+
+.left-title:hover
+{
+  background-color: #8b0000 ;
+  color : rgb(255, 211, 215);
+}
+
+.leader-list
+{
+  display: inline ;
+}
+
 @keyframes focus-in-expand {
   0% {
     letter-spacing: -0.5em;
