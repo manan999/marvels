@@ -1,8 +1,13 @@
 1. Add Images for new teams
 
+----
 1. Create table Story (Yay!)
 2. Add bio for team
 3. Add similar endpoints for story
+----
 
 1. Add photos for mobile devices in slideshow component
 2. Make CSS responsive
+3. ReMake Slideshow using react-slider
+4. ReMake header without using tachyon language
+5. Make StoryShow component for story page
