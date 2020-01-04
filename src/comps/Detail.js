@@ -110,7 +110,7 @@ class Detail extends Component {
 						<div className="bio">
 							<p dangerouslySetInnerHTML={{ __html: this.state.data.bio }} />
 						</div>
-						<div> 
+						<div className="img-long-con"> 
 							<div className="img-long fade-in">
 								<img src={biglink} alt={name}/>
 							</div>
@@ -119,7 +119,7 @@ class Detail extends Component {
 								<Item title="First Appearance: " value={first} className="out-list"/>
 							</div>
 						</div>
-						<div>  
+						<div className="circle-con">  
 						    <Circle num={intel} text="Intelligence" />
 						    <Circle num={combt} text="Combat" />
 						    <Circle num={stren} text="Strength" />

@@ -3,6 +3,7 @@
 	width : 20vw ;
 	display: inline-block; 
 	padding: 1em 3em ;
+	text-align: center;
 }
 
 .lbl
@@ -11,9 +12,17 @@
 	font-size: 2.5rem ;
 }
 
+@media (max-width: 1080px) {
+	.cir
+	{
+		padding: 1em ;
+		margin: 2.3em 0.5em 0.5em ;
+	}
+}
+
 @media (max-width: 600px) {
 	.cir
-	{	margin: 1em 1em 0.5em ;
+	{	margin: 1em 1.1em 0.5em ;
 		width : 20vw ;
 		padding: 0 ;
 	}

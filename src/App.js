@@ -15,6 +15,16 @@ import BigDetail from './comps/BigDetail.js' ;
 import NotFound from './comps/Home/NotFound.js' ;
 
 class App extends Component {
+  resize = () => this.forceUpdate()
+
+  componentDidMount() {
+    window.addEventListener('resize', this.resize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize)
+  }
+  
   render() {
     return (
       <div className="App">
@@ -43,5 +53,3 @@ class App extends Component {
 }
 
 export default App;
-
-// <Route path='/consearch' component={ConSearch} />

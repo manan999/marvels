@@ -1,7 +1,7 @@
 #l
 {
 	text-align: left ;
-	margin : 1em 0;
+	margin : .7em 0;
 	font-weight: 800 ;
 	font-size : 2.4rem ;
 }
@@ -11,20 +11,32 @@
 {	
 	font-size : 2.3rem ;
 	text-align: right; 
+	margin : .7em 0;
 	color : #8B0000;
-	line-height: 1em ;
 	font-family: 'Ubuntu', cursive;
 }
 
-.up
-{
-	position: relative;
-	bottom : 1.8em ;
+.litem
+{	margin : .2em 0;
+	display: flex ;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
-.litem
-{	margin : 0.7em 0;
+@media (max-width: 1080px) {
+	#l
+	{
+		margin : 1.8vw 0;
+		font-size: 3.1vw;
+	}
+
+	#r
+	{
+		margin : 1.8vw 0;
+		font-size: 2.98vw ; 
+	}
 }
+
 
 @media (max-width: 600px) {
 

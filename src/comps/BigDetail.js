@@ -171,6 +171,9 @@ class BigDetail extends Component {
 						<div className="bio">
 							<p dangerouslySetInnerHTML={{ __html: this.state.genData.bio }} />
 						</div>
+						<div className="bd-img-con fade-in">
+							<img src={this.state.genData.link} alt={this.state.name}/>
+						</div>
 						<div className="title-con">
 							<h2 className="left-title"> Leader </h2>
 						</div>

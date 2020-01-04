@@ -7,7 +7,7 @@
 ----
 
 1. Add photos for mobile devices in slideshow component
-2. Make CSS responsive
-3. ReMake Slideshow using react-slider
-4. ReMake header without using tachyon language
-5. Make StoryShow component for story page
+2. Make StoryShow component for story page
+
+.... ReMake Slideshow using react-slider
+.... ReMake header without using tachyon language
