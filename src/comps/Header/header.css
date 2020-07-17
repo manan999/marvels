@@ -55,6 +55,13 @@
 	transform: scale(1.1) ;
 }
 
+.right-header
+{
+	margin-left: auto;
+	display: inline-block; 
+	margin-right: 3vw ;
+}
+
 @media  (max-width: 600px) {
 	#logo
 	{	

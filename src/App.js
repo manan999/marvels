@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom' ;
 import { ScrollContext } from 'react-router-scroll-4';
-
+import AOS from 'aos' ;
+import 'aos/dist/aos.css';
 
 import './App.css' ;
 import Header from './comps/Header/Header.js' ;
@@ -18,6 +19,7 @@ class App extends Component {
   resize = () => this.forceUpdate()
 
   componentDidMount() {
+    AOS.init() ;
     window.addEventListener('resize', this.resize)
   }
 

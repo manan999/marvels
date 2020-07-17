@@ -3,32 +3,29 @@ import {Link} from'react-router-dom' ;
 import CheeseburgerMenu from 'cheeseburger-menu'
 import HamburgerMenu from 'react-hamburger-menu'
 
-
 import './header.css' ;
 import Menu from './Menu.js' ;
 
 class Header extends React.Component 
-{
-	constructor(props) {
-	    super(props)
-	    this.classMenu = {
-	    	home : 'item link' ,
-	    	hero : 'item link' ,
-	    	vill : 'item link' ,
-	    	team : 'item link' ,
-	    	story : 'item link'
-	    } ;
-	    this.state = {
-	      menuOpen: false,
-	    }
-	}
+{	
+	state = {
+      menuOpen: false,
+    }	;
+
+	classMenu = {
+    	home : 'item link' ,
+    	hero : 'item link' ,
+    	vill : 'item link' ,
+    	team : 'item link' ,
+    	story : 'item link'
+    } ;
 
 	openMenu = () => {
 	    this.setState({ menuOpen: true })
 	}
 
 	closeMenu = () => {
-		console.log("trigger") ;
+		// console.log("trigger") ;
 	    this.setState({ menuOpen: false })
 	}
 
@@ -83,9 +80,9 @@ class Header extends React.Component
 	render = () => {
 		this.addOk(window.location.pathname) ;
 		return (
-			<div className="ui secondary pointing menu" id="bar"> 
+			<div className="header" id="bar"> 
 				<Link to="/" className="item link" id="logo"> MARVEL </Link> 
-				<div className = "ui right secondary menu">
+				<div className = "header-right">
 					{this.checkMobile()}
 				</div>
 			</div>
