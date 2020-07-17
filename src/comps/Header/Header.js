@@ -80,9 +80,9 @@ class Header extends React.Component
 	render = () => {
 		this.addOk(window.location.pathname) ;
 		return (
-			<div className="header" id="bar"> 
+			<div className="ui secondary pointing menu" id="bar">
 				<Link to="/" className="item link" id="logo"> MARVEL </Link> 
-				<div className = "header-right">
+				<div className = "ui right secondary menu">
 					{this.checkMobile()}
 				</div>
 			</div>
