@@ -48,7 +48,7 @@ class Detail extends Component {
 	getCharData = () => {
 		if(this.state.type === 'hero')
 		{
-			fetch('https://mrvl-api.herokuapp.com/bigh?name=' + this.state.name)
+			fetch('https://mrvl2-api.herokuapp.com/bigh?name=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -57,13 +57,13 @@ class Detail extends Component {
 		          } )
 		    .then( resp => {
 		            // console.log(resp) ;
-		            this.setState({data: resp[0]}, () => this.fetchMoreHeroData('h') );
+		            this.setState({data: resp}, () => this.fetchMoreHeroData('h') );
 		                	} )
 		    .catch( err => console.log(err) ) ;
 		}
 		else
 		{
-			fetch('https://mrvl-api.herokuapp.com/bigv?name=' + this.state.name)
+			fetch('https://mrvl2-api.herokuapp.com/bigv?name=' + this.state.name)
 			.then( res => {
 				    if ( res.ok )
 		              return res.json() ;
@@ -72,7 +72,7 @@ class Detail extends Component {
 		          } )
 		    .then( resp => {
 		            // console.log(resp) ;
-		            this.setState({data: resp[0]}, () => this.fetchMoreHeroData('v'));
+		            this.setState({data: resp}, () => this.fetchMoreHeroData('v'));
 		                	} )
 		    .catch( err => console.log(err) ) ;
 		}		

@@ -19,7 +19,7 @@ class MiniCardList extends Component {
 	}
 
 	componentDidMount() {
-		fetch('https://mrvl-api.herokuapp.com/hero?limit=7')
+		fetch('https://mrvl2-api.herokuapp.com/hero?limit=7')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
@@ -31,7 +31,7 @@ class MiniCardList extends Component {
 	            this.setState({hero: resp});
 	                	} )
 	    .catch( err => console.log(err) ) ;
-	    fetch('https://mrvl-api.herokuapp.com/vill?limit=7')
+	    fetch('https://mrvl2-api.herokuapp.com/vill?limit=7')
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
