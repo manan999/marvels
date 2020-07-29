@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import ConSearch from './ConSearch/ConSearch.js' ;
+import ConSearch from '../ConSearch/ConSearch.js' ;
 
-class HeroList extends Component {
+class HeroPage extends Component {
 	render() {
 		return (
 			<div>
@@ -12,4 +12,4 @@ class HeroList extends Component {
 	}
 }
 
-export default HeroList ;
+export default HeroPage ;

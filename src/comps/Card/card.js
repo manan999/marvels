@@ -5,23 +5,20 @@ import './card.css' ;
 
 class Card extends React.Component
 {
-	constructor (props) {
-		super(props) ;
-		this.state = {
-			big : this.props.big ,
-		}
-	}
+	state = {
+		big : this.props.big ,
+	} ;
 
 	checkBig = () =>{
 		if( this.state.big === 'yes')
 			return <p> {this.props.rn} </p> ;
 	}
 
-	checkNum = () =>{
-		if( isNaN(this.props.name.charAt(this.props.name.length-1)) === false)
-			return this.props.name.slice(0, this.props.name.length-2) ;
+	checkNum = (str) =>{
+		if( isNaN(str.charAt(str.length-1)) === false)
+			return str.slice(0, str.length-2) ;
 		else
-			return this.props.name ;
+			return str ;
 	}
 
 	onCardClick = () => {
@@ -40,7 +37,7 @@ class Card extends React.Component
 			<div className={str} data-aos="zoom-in" onClick={this.onCardClick}>
 				<img src = {this.props.link} alt = 'Cap_Ame' />
 				<div>
-					<h2> {this.checkNum()} </h2>
+					<h2> {this.checkNum(this.props.name)} </h2>
 					{ this.checkBig() }
 				</div>
 			</div>

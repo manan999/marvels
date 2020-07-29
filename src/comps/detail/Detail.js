@@ -2,25 +2,22 @@ import React, { Component } from 'react';
 import CircleLoader from 'react-spinners/CircleLoader' ;
 
 import './details.css' ;
-import List from './List/List.js' ;
-import Item from './List/Item/Item.js' ;
-import Circle from './Circle/Circle.js' ;
-import ClickInfo from './ClickInfo/ClickInfo.js' ;
-import CardList from './Card/cardlist.js' ;
-import BreadCrumb from './BreadCrumb/BreadCrumb.js' ;
+import List from '../List/List.js' ;
+import Item from '../List/Item/Item.js' ;
+import Circle from '../Circle/Circle.js' ;
+import ClickInfo from '../ClickInfo/ClickInfo.js' ;
+import CardList from '../Card/cardlist.js' ;
+import BreadCrumb from '../BreadCrumb/BreadCrumb.js' ;
 
 class Detail extends Component {
-	constructor()
-	{
-		super() ;
-		this.crumbData = [] ;
-		this.state = {
-			type : '' ,
-			name : '' ,
-			data : {} ,
-			teamData : {} ,
-		}
-	}
+	crumbData = [] ;
+	state = {
+		type : '' ,
+		name : '' ,
+		data : {} ,
+		teamData : [] ,
+		storyData : {} ,
+	}	;
 
 	componentDidMount = () => {
 		let str = window.location.pathname ;
@@ -28,87 +25,75 @@ class Detail extends Component {
 		str = str.split('/') ;
 		this.setState({ type: str[0] , name: str[1] }, () => {
 			this.crumbData = [
-			{
-				name: 'Home >' ,
+			{	name: 'Home >' ,
 				link: '/'
-			} ,
-			{
+			} ,	{
 				name: this.state.type + ' >' ,
 				link: '/' + this.state.type 
-			} ,
-			{
-				name: this.state.name ,
-				link: '/' + this.state.type + '/' + this.state.name 
-			} 
-			] ;
+			} ,	{
+				name: this.checkNum(this.state.name) ,
+				link: '/' + this.state.type + '/' + this.state.name
+			} ] ;
 			this.getCharData() ;
 		} );
 	}
 
-	getCharData = () => {
-		if(this.state.type === 'hero')
-		{
-			fetch('https://mrvl2-api.herokuapp.com/bigh?name=' + this.state.name)
-			.then( res => {
-				    if ( res.ok )
-		              return res.json() ;
-		            else 
-		              throw Error(res.statusText)
-		          } )
-		    .then( resp => {
-		            // console.log(resp) ;
-		            this.setState({data: resp}, () => this.fetchMoreHeroData('h') );
-		                	} )
-		    .catch( err => console.log(err) ) ;
-		}
+	checkNum = (str) =>{
+		if( isNaN(str.charAt(str.length-1)) === false)
+			return str.slice(0, str.length-2) ;
 		else
-		{
-			fetch('https://mrvl2-api.herokuapp.com/bigv?name=' + this.state.name)
-			.then( res => {
-				    if ( res.ok )
-		              return res.json() ;
-		            else 
-		              throw Error(res.statusText)
-		          } )
-		    .then( resp => {
-		            // console.log(resp) ;
-		            this.setState({data: resp}, () => this.fetchMoreHeroData('v'));
-		                	} )
-		    .catch( err => console.log(err) ) ;
-		}		
+			return str ;
 	}
 
-	fetchMoreHeroData = (ch) => {
-		fetch('https://mrvl-api.herokuapp.com/tsp' + ch + '?ch=' + this.state.data.id)
+	getCharData = () => {
+		let char = 'v'
+		if(this.state.type === 'hero')	
+			char = 'h'
+		else
+			char = 'v'
+
+		fetch('https://mrvl2-api.herokuapp.com/big'+char+'?name=' + this.state.name)
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
 	            else 
 	              throw Error(res.statusText)
 	          } )
-	    .then( resp => {
-	            //console.log(resp) ;
-	            this.setState({teamData: resp});
-	                	} )
+	    .then( resp => this.setState({data: resp}, () => this.fetchMoreData()) )
 	    .catch( err => console.log(err) ) ;
+	}
+
+	fetchMoreData = () => {
+		fetch('https://mrvl2-api.herokuapp.com/memt?name=' + this.state.data.name)
+		.then( res => {
+			    if ( res.ok )
+	              return res.json() ;
+	            else 
+	              throw Error(res.statusText)
+	          } )
+	    .then( resp => this.setState({teamData: resp}) )
+	    .catch( err => console.log(err) ) ;
+
+	    //Fetch story end-point here
 	}
 
 	render() {
 		let {name, realname, biglink, combt, country, first, gender} = this.state.data ;
-		let {intel, magic, origin, speed, stren, universe, tough} = this.state.data ;
+		let {intel, magic, origin, speed, stren, universe, tough, bio} = this.state.data ;
 		let items = [realname, gender, universe, origin, country] ;
 		let titles = ['Real Name:', 'Gender:', 'Universe:', 'Species:', 'Nationality:'] ;
-		if( this.state.data.hasOwnProperty('name') )
+		
+		if( name )
 		{
 			return (
 				<div>
 					<div className="panel">
 						<BreadCrumb data={this.crumbData}/>
 						<hr color="#E70013" />
-						<h1 className="heading focus-in-expand"> {name} </h1> 
+						<h1 className="heading focus-in-expand"> {this.checkNum(name)} </h1> 
 						<hr color="#E70013" className="rule"/>
 						<div className="bio">
-							<p dangerouslySetInnerHTML={{ __html: this.state.data.bio }} />
+							<p dangerouslySetInnerHTML={{ __html: bio }} />
 						</div>
 						<div className="img-long-con"> 
 							<div className="img-long fade-in">

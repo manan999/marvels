@@ -1,8 +1,6 @@
 ----
 1. Create table Story (Yay!)
-2. Add bio for team
-3. Add similar endpoints for story
-----
+2. Add similar endpoints for story
 
-1. Add photos for mobile devices in slideshow component
-2. Make StoryShow component for story page
+3. Add photos for mobile devices in slideshow component
+4. Make StoryShow component for story page

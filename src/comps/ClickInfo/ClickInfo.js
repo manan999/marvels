@@ -3,11 +3,8 @@ import React, { Component } from 'react';
 import './clickinfo.css' ;
 
 class ClickInfo extends Component {
-	constructor()
-	{	super() ;
-		this.state = {
-			show : 'Show' ,
-		}
+	state = {
+		show : 'Show' ,
 	}
 
 	checkClick = () => {
