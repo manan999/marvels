@@ -68,10 +68,10 @@ class MiniCardList extends Component {
 					<PanelCard arr={this.state.villain.slice(0, x)} big="no" path="villain/" info="The Dreadful, the Deadly and the Fearsome of Marvel Universe ..."/>
 				</MiniCard>
 				<MiniCard head="STORIES!" path='/story'>
-					<PanelCard arr={this.state.story.slice(0, x)} big="med" path="story/" info="From The Infinity Saga to Annihilation, Some of the greatest of the Marvel Lore..."/>
+					<PanelCard arr={this.state.story.slice(0, 4)} big="med" path="story/" info="From The Infinity Saga to Annihilation, Some of the greatest of the Marvel Lore..."/>
 				</MiniCard>
 				<MiniCard head="TEAMS!" path='/team'>
-					<PanelCard arr={this.state.team.slice(0, x)} big="med" path="team/" info="When the threats are too mighty to tackle alone, you ASSEMBLE..."/>
+					<PanelCard arr={this.state.team.slice(0, 4)} big="med" path="team/" info="When the threats are too mighty to tackle alone, you ASSEMBLE..."/>
 				</MiniCard>
 			</div>
 		);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './not.css' ;
-import i04 from "../img/404.png" ;
+import i04 from '../img/404.webp' ;
 
 class NotFound extends Component {
 	 

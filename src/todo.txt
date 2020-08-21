@@ -2,5 +2,4 @@
 1. Create table Story (Yay!)
 2. Add similar endpoints for story
 
-3. Add photos for mobile devices in slideshow component
 4. Make StoryShow component for story page

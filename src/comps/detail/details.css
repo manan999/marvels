@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
 @font-face {
 font-family: 'ecr';
 font-style: normal;
 font-weight: normal;
 src: local('ethnocentricrg'), url('../fonts/ethnocentricrg.woff') format('woff');
 }
-
-@import url('https://fonts.googleapis.com/css?family=Rubik');
 
 .bio p
 {
