@@ -139,7 +139,7 @@ class BigDetail extends Component {
 				if(parts[1]) {
 					return (
 						<ClickInfo title={"Story (Part "+(i+1)+")"} key={i}>
-							<StorySlider width="80" color="#FF2222" arr={data.slice(parts[i],parts[i+1])} />
+							<StorySlider color="#FF2222" arr={data.slice(parts[i],parts[i+1])} />
 						</ClickInfo>
 					);
 				}

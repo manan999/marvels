@@ -46,7 +46,7 @@ class StorySlider extends Component {
 		const {data} = this.state ;
 		console.log(data) ;
 		return (
-			<div className="story-slider-cont" style={ {width: this.props.width + '%'} }>
+			<div className="story-slider-cont">
 				<div className="page-con">
 					<p> <strong> Page: </strong> {data.page} </p>
 					<button className="lang-btn" onClick={this.langChange}> 

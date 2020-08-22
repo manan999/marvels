@@ -34,14 +34,14 @@
 @media (max-width: 600px) {
 	.ci-head
 	{
-		font-size : 7vw ;
+		font-size : 5vw ;
 		margin-left: 8.4vw ;
 		margin-top: 2.1vw !important; 
 	}
 
 	.ci-btn
 	{
-		padding : 1vw ;
+		padding : .7vw ;
 		margin-right : 8.86vw ;
 		font-size : 4.43vw ;
 		width: 24.35vw ;
