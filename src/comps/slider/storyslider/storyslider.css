@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.story-slider-image
+{	width: 100% ;	
+}
+
+.story-slider-cont
+{	position: relative ;
+	transition: all 1s ;
+	min-height: 45.66vw ;
+	background-color: #8B0000 ;
+	margin: auto ;
+}
+
+.story-slider-btn
+{	border: none ;
+	box-shadow: none ;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 50% ;
+	font-size: 1.5rem;
+	font-weight: bold ;
+	font-family: 'Fredoka One', sans-serif;
+	z-index: 2;
+	width: auto;
+	height: auto;
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	transition: all 0.1s ;
+}
+
+.story-slider-btn:hover	{	
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.btn-left 	{
+	left: 0;
+	padding: .4vw .9vw .4vw .7vw;
+}
+
+.btn-right	{
+	right: 0 ;
+	padding: .4vw .7vw .4vw .9vw;
+}
+
+.slide-nav
+{	justify-content: center;
+	display: flex ;
+	margin: 1em auto .5em;
+}
+
+.story-slider-dot		{
+	width: 7px;
+    height: 7px;
+    margin: 0 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.story-slider-dot:hover
+{	transform: scale(1.7);	
+}
+
+.story-con, .page-con
+{	font-size: 1.5rem;
+	color: white;	
+	padding: .7em ;
+}
+
+.page-con	{
+	display: flex ;
+	justify-content: space-between;
+}
+
+.story-con {
+	text-align: left;
+}
+
+.lang-btn {	
+	font-size: 1.4rem;
+	background-color: white ;
+	color: #8B0000 ;
+	border: none ;
+	border-radius: 1rem ;
+	transition: all .2s ;
+}
+
+.lang-btn:hover {
+	transform: scale(1.1);
+}

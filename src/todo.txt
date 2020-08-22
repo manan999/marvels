@@ -1,5 +1,1 @@
-----
-1. Create table Story (Yay!)
-2. Add similar endpoints for story
-
-4. Make StoryShow component for story page
+1. Story ke characters fetch karne ke liye endpoint lagane hai...and ye dekhna hai ki react me smoothly successive fetch karne ho to kya procedure hai...

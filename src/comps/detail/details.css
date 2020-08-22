@@ -7,26 +7,23 @@ font-weight: normal;
 src: local('ethnocentricrg'), url('../fonts/ethnocentricrg.woff') format('woff');
 }
 
-.bio p
-{
-  font-size: 2rem ;
+.bio p {
+  font-size: 1.8rem ;
   font-family: 'Rubik' ;
   line-height: 1.4em ;
 }
 
-b
-{
+b {
   font-weight: 900 ;
 }
 
-.img-long-con
-{
-    display: flex;
-    margin-top: 1.5em;
+.img-long-con {
+  display: flex;
+  margin-top: 1.5em;
 }
 
-.bd-img-con img
-{ border-radius: 2rem ;
+.bd-img-con img { 
+  border-radius: 2rem ;
   border : 10px solid #E70013 ;
   width: 68vw;
   margin: 1.5em 0;
@@ -39,33 +36,28 @@ b
 	border : 10px solid #E70013 ;
 }
 
-.content, .img-long
-{
+.content, .img-long {
 	display: inline-block;
-	width : 474px ;
-	  
+	width : 474px ; 
 }
 
-.content
-{
+.content {
 	border : 10px solid #ffD3D7 ;
 }
 
-.heading
-{
-	font-size : 5.28vw ;
+.heading {
+	font-size : 4.7vw ;
 	color: #8B0000 ;
 	font-family: 'ecr';
 }
 
-.rule
-{
+.rule {
 	margin-bottom: 2em ;
 }
 
-.load-text
-{ margin-top : 1.6em ;
-  font-size : 3.5rem ;
+.load-text { 
+  margin-top : 1.6em ;
+  font-size : 4rem ;
 }
 
 .loader
@@ -103,19 +95,16 @@ b
   text-align: left ;
 }
 
-.left-title:hover
-{
+.left-title:hover {
   background-color: #8b0000 ;
   color : rgb(255, 211, 215);
 }
 
-.leader-list
-{
+.leader-list {
   display: inline ;
 }
 
-.circle-con
-{
+.circle-con {
   display: flex ;
   flex-wrap: wrap ;
 }

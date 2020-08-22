@@ -3,6 +3,8 @@ import CircleLoader from 'react-spinners/CircleLoader' ;
 
 import CardList from '../Card/cardlist.js' ;
 import BreadCrumb from '../BreadCrumb/BreadCrumb.js' ;
+import ClickInfo from '../ClickInfo/ClickInfo.js' ;
+import StorySlider from '../slider/storyslider/StorySlider.js' ;
 import './details.css' ;
 
 class BigDetail extends Component {
@@ -46,7 +48,7 @@ class BigDetail extends Component {
 		            else 
 		              throw Error(res.statusText)
 		          } )
-		    .then( resp => this.setState({ genData : resp}) )
+		    .then( resp => { console.log(resp); this.setState({ genData : resp}) ; } )
 		    .catch( err => console.log(err) ) ;
 		}
 		else
@@ -130,6 +132,28 @@ class BigDetail extends Component {
 			return null ;
 	}	
 
+	checkParts = () => {
+		const {parts, data} = this.state.genData ;
+		if(parts)
+		{	return parts.map( (part, i) => {
+				if(parts[1]) {
+					return (
+						<ClickInfo title={"Story (Part "+(i+1)+")"} key={i}>
+							<StorySlider width="80" color="#FF2222" arr={data.slice(parts[i],parts[i+1])} />
+						</ClickInfo>
+					);
+				}
+				else
+				{	return (
+						<ClickInfo title="Story" key={i}>
+							<StorySlider width="80" color="#FF2222" arr={data} />
+						</ClickInfo>
+					);
+				}
+			})
+		}
+	}
+
 	render() {
 		if( this.state.dataV.hasOwnProperty('0') || this.state.dataH.hasOwnProperty('0'))
 		{	return (
@@ -170,9 +194,13 @@ class BigDetail extends Component {
 						<hr color="#E70013" />
 						<h1 className="heading focus-in-expand"> {this.state.name} </h1> 
 						<hr color="#E70013" className="rule"/>
+						<div className="bio">
+							<p dangerouslySetInnerHTML={{ __html: this.state.genData.descr }} />
+						</div>
 						<div className="bd-img-con fade-in">
 							<img src={this.state.genData.link} alt={this.state.name}/>
 						</div>
+						{ this.checkParts() }
 					</div>
 				</div>
 			);
