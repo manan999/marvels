@@ -8,6 +8,7 @@ class StorySlider extends Component {
 		data: this.props.arr[0],
 		page: 0,
 		lang: 'hindi',
+		quality: 'high',
 	}
 
 	createDots = () => {
@@ -42,19 +43,30 @@ class StorySlider extends Component {
 			this.setState({lang : 'hindi' }) ;
 	}
 
+	qualChange = () => {
+		if(this.state.quality === 'high')
+			this.setState({quality : 'low'}) ;
+		else
+			this.setState({quality : 'high' }) ;
+	}
+
 	render() {
-		const {data} = this.state ;
-		console.log(data) ;
+		const {data, quality, lang} = this.state ;
 		return (
 			<div className="story-slider-cont">
 				<div className="page-con">
 					<p> <strong> Page: </strong> {data.page} </p>
-					<button className="lang-btn" onClick={this.langChange}> 
-						{(this.state.lang==='hindi')?'Hindi':'English'}
-					</button>
+					<div>
+						<button className="lang-btn" onClick={this.langChange}> 
+							{(lang==='hindi')?'Hindi':'English'}
+						</button>
+						<button className="lang-btn" onClick={this.qualChange}> 
+							{(quality==='high')?'High Quality':'Low Quality'}
+						</button>
+					</div>
 				</div>
 
-				<img className="story-slider-image " key={data.page} src={data.img} alt={data.img} />
+				<img className="story-slider-image " key={data.page} src={data[quality]} alt={data[quality]} />
 
 				<button className="story-slider-btn btn-left" onClick={this.onPrevClick}> &lt; </button> 
 				<button className="story-slider-btn btn-right" onClick={this.onNextClick}> &gt; </button>
@@ -62,7 +74,7 @@ class StorySlider extends Component {
 				<div className="slide-nav">	{this.createDots()} </div>
 				
 				<div className="story-con">
-					<p dangerouslySetInnerHTML={{ __html: data[this.state.lang] }} />
+					<p dangerouslySetInnerHTML={{ __html: data[lang] }} />
 				</div>
 			</div>
 		);

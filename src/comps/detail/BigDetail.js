@@ -48,7 +48,7 @@ class BigDetail extends Component {
 		            else 
 		              throw Error(res.statusText)
 		          } )
-		    .then( resp => { console.log(resp); this.setState({ genData : resp}) ; } )
+		    .then( resp => this.setState({ genData : resp}) )
 		    .catch( err => console.log(err) ) ;
 		}
 		else

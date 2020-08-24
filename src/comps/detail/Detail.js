@@ -46,11 +46,11 @@ class Detail extends Component {
 	}
 
 	getCharData = () => {
-		let char = 'v'
+		let char = 'v' ;
 		if(this.state.type === 'hero')	
-			char = 'h'
+			char = 'h' ; 
 		else
-			char = 'v'
+			char = 'v' ;
 
 		fetch('https://mrvl2-api.herokuapp.com/big'+char+'?name=' + this.state.name)
 		.then( res => {
