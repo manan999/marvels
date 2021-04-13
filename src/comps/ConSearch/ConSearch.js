@@ -1,65 +1,61 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Searchbar from '../Search/Search.js' ;
-import Logo from '../Logo/Logo.js' ;
 import CardList from '../Card/cardlist.js' ;
 
-class ConSearch extends Component {
-	
-	state = {
-		cards : [] ,
-		searchText : '' ,
-	}
+import './logo.css' ;
 
-	componentDidMount() {
-		fetch(this.props.url)
+const Logo = ({title}) => {
+	return (
+		<div className="logo">
+			<h1> {title} </h1>
+		</div>
+	);
+}
+
+const calcPath = (title) => {
+	switch(title)
+	{
+		case 'HEROES' : return 'hero/' ;
+		case 'VILLAINS' : return 'villain/' ;
+		case 'STORIES' : return 'story/' ;
+		case 'Teams' : return 'team/' ;
+		default : return '' ;
+	}
+}
+
+
+const ConSearch = ({url, title}) => {
+	const [cards, setCards] = useState([]) ;
+	const [searchText, setSearchText] = useState('') ;
+
+	const arr = cards.filter(card => card.name.toLowerCase().includes(searchText.toLowerCase()) ) ;
+
+	let str = (title === 'HEROES'||title === 'VILLAINS')?'yes':'med';
+
+	useEffect(() => {
+		fetch(url)
 		.then( res => {
 			    if ( res.ok )
 	              return res.json() ;
 	            else 
 	              throw Error(res.statusText)
 	          } )
-	    .then( resp => this.setState({cards: resp}) )
+	    .then( resp => setCards(resp) )
 	    .catch( err => console.log(err) ) ;
+	}, [url]) ;
+
+	const onSC = (event) => {
+		setSearchText(event.target.value) ;
 	}
 
-	onSC = (event) => {
-		this.setState({searchText : event.target.value}) ;
-	}
-
-	big = () => {
-		if (this.props.title === 'HEROES' || this.props.title === 'VILLAINS' )
-			return 'yes' ;
-		else
-			return 'med' ; 
-	}
-
-	calcPath = () => {
-		switch(this.props.title)
-		{
-			case 'HEROES' : return 'hero/' ;
-			case 'VILLAINS' : return 'villain/' ;
-			case 'STORIES' : return 'story/' ;
-			case 'Teams' : return 'team/' ;
-			default : return '' ;
-		}
-	}
-
-	render() {
-		const arr = this.state.cards.filter(card => {
-			return card.name.toLowerCase().includes(this.state.searchText.toLowerCase()) ;
-		}) ;
-
-		let str = this.big() ;
-		
-		return (
-			<div className="panel">
-				<Logo title={this.props.title} />
-				<Searchbar searchChange={this.onSC} />
-				<CardList arr={arr} big={str} path={this.calcPath()}/> 
-			</div>
-		);
-	}
+	return (
+		<div className="panel">
+			<Logo title={title} />
+			<Searchbar searchChange={onSC} />
+			<CardList arr={arr} big={str} path={() => calcPath(title)}/> 
+		</div>
+	);
 }
 
 export default ConSearch ;

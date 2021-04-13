@@ -3,46 +3,33 @@ import { withRouter } from 'react-router-dom' ;
 
 import './card.css' ;
 
-class Card extends React.Component
-{
-	state = {
-		big : this.props.big ,
-	} ;
+const checkNum = (str) =>{
+	if( isNaN(str.charAt(str.length-1)) === false)
+		return str.slice(0, str.length-2) ;
+	else
+		return str ;
+}
 
-	checkBig = () =>{
-		if( this.state.big === 'yes')
-			return <p> {this.props.rn} </p> ;
-	}
+const Card = ({big, path, name, history, link, rn}) => {
 
-	checkNum = (str) =>{
-		if( isNaN(str.charAt(str.length-1)) === false)
-			return str.slice(0, str.length-2) ;
-		else
-			return str ;
-	}
-
-	onCardClick = () => {
-		let str ;
-		if(this.props.path)
-		{	str = this.props.path + this.props.name ;
+	const onCardClick = () => {
+		if(path)
+		{	let str = path + name ;
 			if(window.location.pathname.length > 8 )
-				this.props.history.push('/') ;
-			this.props.history.push(str) ;
+				history.push('/') ;
+			history.push(str) ;
 		}
 	}
 	
-	render()
-	{	const str = 'cards ' + this.state.big ;
-		return (
-			<div className={str} data-aos="zoom-in" onClick={this.onCardClick}>
-				<img src = {this.props.link} alt = 'Cap_Ame' />
-				<div>
-					<h2> {this.checkNum(this.props.name)} </h2>
-					{ this.checkBig() }
-				</div>
+	return (
+		<div className={'cards '+big} data-aos="zoom-in" onClick={onCardClick}>
+			<img src = {link} alt = 'Cap_Ame' />
+			<div>
+				<h2> {checkNum(name)} </h2>
+				{ big==='yes'?<p>{rn}</p>:null }
 			</div>
+		</div>
 	) ;
-	}
 }
 
 export default withRouter(Card)  ;
