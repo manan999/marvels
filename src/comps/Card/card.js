@@ -10,11 +10,12 @@ const checkNum = (str) =>{
 		return str ;
 }
 
-const Card = ({big, path, name, history, link, rn}) => {
+const Card = ({big, humaraPath, name, history, link, rn}) => {
 
 	const onCardClick = () => {
-		if(path)
-		{	let str = path + name ;
+		if(humaraPath)
+		{	let str = humaraPath + name ;
+			
 			if(window.location.pathname.length > 8 )
 				history.push('/') ;
 			history.push(str) ;

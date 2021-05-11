@@ -3,22 +3,22 @@ import {Link} from'react-router-dom' ;
 
 import './mini.css' ;
 
-const select = (path) => {	
-	if(path !== '/gallery')
+const select = (humaraPath) => {	
+	if(humaraPath !== '/gallery')
 	{	return (
 			<div className="next" >
-				<Link className="heartbeat" to={path}> More </Link> 
+				<Link className="heartbeat" to={humaraPath}> More </Link> 
 			</div>
 		) ;
 	}
 }
 
-const MiniCard = ({head, children, path}) => {
+const MiniCard = ({head, children, humaraPath}) => {
 	return (
 		<div className="mini">
 			<h2> {head} </h2>
 			<div> {children} </div>
-			{select(path)}
+			{select(humaraPath)}
 		</div>
 	);
 }

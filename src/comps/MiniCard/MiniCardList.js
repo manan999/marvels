@@ -56,20 +56,20 @@ const MiniCardList = () => {
 
 	return (
 		<div>
-			<MiniCard head="WELCOME!" path='/gallery'>
+			<MiniCard head="WELCOME!" humaraPath='/gallery'>
 				<ImageSlide />
 			</MiniCard>
-			<MiniCard head="HEROES!" path='/hero'>
-				<PanelCard arr={hero.slice(0, x)} big="no" path="hero/" info="A List of the Earth's Mightiest Heroes and Beyond too..."/>
+			<MiniCard head="HEROES!" humaraPath='/hero'>
+				<PanelCard arr={hero.slice(0, x)} big="no" humaraPath="hero/" info="A List of the Earth's Mightiest Heroes and Beyond too..."/>
 			</MiniCard>
-			<MiniCard head="VILLAINS!" path='/villain'>
-				<PanelCard arr={villain.slice(0, x)} big="no" path="villain/" info="The Dreadful, the Deadly and the Fearsome of Marvel Universe ..."/>
+			<MiniCard head="VILLAINS!" humaraPath='/villain'>
+				<PanelCard arr={villain.slice(0, x)} big="no" humaraPath="villain/" info="The Dreadful, the Deadly and the Fearsome of Marvel Universe ..."/>
 			</MiniCard>
-			<MiniCard head="STORIES!" path='/story'>
-				<PanelCard arr={story.slice(0, 4)} big="med" path="story/" info="From The Infinity Saga to Annihilation, Some of the greatest of the Marvel Lore..."/>
+			<MiniCard head="STORIES!" humaraPath='/story'>
+				<PanelCard arr={story.slice(0, 4)} big="med" humaraPath="story/" info="From The Infinity Saga to Annihilation, Some of the greatest of the Marvel Lore..."/>
 			</MiniCard>
-			<MiniCard head="TEAMS!" path='/team'>
-				<PanelCard arr={team.slice(0, 4)} big="med" path="team/" info="When the threats are too mighty to tackle alone, you ASSEMBLE..."/>
+			<MiniCard head="TEAMS!" humaraPath='/team'>
+				<PanelCard arr={team.slice(0, 4)} big="med" humaraPath="team/" info="When the threats are too mighty to tackle alone, you ASSEMBLE..."/>
 			</MiniCard>
 		</div>
 	);

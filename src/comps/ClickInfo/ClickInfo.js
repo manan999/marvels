@@ -4,27 +4,19 @@ import './clickinfo.css' ;
 
 const ClickInfo = ({children, title}) => {
 
-	const [show, setShow] = useState('Show') ;
+	const [show, setShow] = useState(false) ;
 
-	const onButtonClick = () => {
-		let st = (show === 'Show'? 'Hide' : 'Show') ;
-		setShow(st)
-	}
-
-	const checkStyle = () => {
-		if(show === 'Hide')
-			return { backgroundColor: '#E70013' } ;
-	}
+	const onButtonClick = () => setShow(!show) 
 
 	return (
 		<div>
 			<div className="ci-con">
 				<p className="ci-head"> {title+' :'} </p>
-				<button style={() => checkStyle()} className="ci-btn" onClick={onButtonClick}> 
-					{show} </button> 
+				<button style={ {backgroundColor: (show?"#E70013":"") } } className="ci-btn" onClick={onButtonClick}> 
+					{show?'Hide':'Show'} </button> 
 			</div>
 			<div>
-				{ show === 'Hide'? children : null}
+				{show?children:null}
 			</div> 
 		</div>
 	);

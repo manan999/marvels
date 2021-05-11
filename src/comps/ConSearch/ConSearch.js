@@ -53,7 +53,7 @@ const ConSearch = ({url, title}) => {
 		<div className="panel">
 			<Logo title={title} />
 			<Searchbar searchChange={onSC} />
-			<CardList arr={arr} big={str} path={() => calcPath(title)}/> 
+			<CardList arr={arr} big={str} humaraPath={calcPath(title)}/> 
 		</div>
 	);
 }
